@@ -9,7 +9,7 @@
 \usepackage{amsfonts}
 \usepackage{palatino}
 \end_preamble
-\options showpacs,preprintnumbers,amsmath,amssymb,aps,notitlepage,twocolumn
+\options showpacs,preprintnumbers,amsmath,amssymb,aps,notitlepage
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -87,7 +87,6 @@ Nike Dattani
 \end_layout
 
 \begin_layout Author Email
-
 dattani.nike@fukui.kyoto.ac.jp
 \end_layout
 
@@ -104,7 +103,6 @@ Yu Zhai
 \end_layout
 
 \begin_layout Author Email
-
 yuzhai@mail.huiligroup.org
 \end_layout
 
@@ -174,13 +172,39 @@ One option we can take, is to just make every radially dependent variable
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}r_{1}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)}\right)^{2}\\
+V\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)}\right)^{2}\\
 \beta\left(r_{1},r_{2}\right) & =\beta_{1,\infty}y_{p,1}(r_{1})+\left(1-y_{p,1}(r_{1})\right)\sum_{i=0}^{N_{\beta,1}}\beta_{i}\left(y_{p,1}(r_{1})\right)^{i}\\
  & +\beta_{2,\infty}y_{p,2}(r_{2})+\left(1-y_{p,2}(r_{2})\right)\sum_{i=0}^{N_{\beta,1}}\beta_{i}\left(y_{p,2}(r_{2})\right)^{i}\\
-\lim_{r_{1}\rightarrow\infty}\beta & =\beta_{1,\infty},\\
-\lim_{r_{2}\rightarrow\infty}\beta & =\beta_{2,\infty},\\
+\lim_{r_{1}\rightarrow\infty}\beta & =\beta_{1,\infty}+\beta(r_{2})\\
+\lim_{r_{2}\rightarrow\infty}\beta & =\beta_{2,\infty}+\beta(r_{1})\\
 \lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}\beta & =\beta_{1,\infty}+\beta_{2,\infty}\\
- & =\beta_{\infty}
+ & =\beta_{\infty}\\
+y_{p} & =y_{p,1}y_{p,2}\\
+ & =\left(\frac{r_{1}^{p}-r_{e,1}^{p}}{r_{1}^{p}+r_{e,1}^{p}}\right)\left(\frac{r_{2}^{p}-r_{e,2}^{p}}{r_{2}^{p}+r_{e,2}^{p}}\right)\\
+\lim_{r_{1}\rightarrow\infty}y_{p} & =y_{p,2}\\
+\lim_{r_{2}\rightarrow\infty}y_{p} & =y_{p,1}\\
+\lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}y_{p} & =1\\
+\lim_{\left(r_{1},r_{2}\right)\rightarrow0}y_{p} & =1\,\text{[Problem \#1] !}\label{eq:problem1}\\
+\lim_{r_{1}\rightarrow\infty}\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right) & =\beta_{1,\infty}y_{p,2}+\beta\left(r_{2}\right)y_{p,2}\\
+\lim_{r_{2}\rightarrow\infty}\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right) & =\beta_{2,\infty}y_{p,1}+\beta\left(r_{1}\right)y_{p,1}\\
+\lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right) & =\beta_{1,\infty}+\beta_{2,\infty}\\
+\lim_{r_{1}\rightarrow\infty}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)}= & e^{-\beta_{1,\infty}y_{p,2}}e^{-\beta(r_{2})y_{p,2}}\\
+\lim_{r_{2}\rightarrow\infty}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)}= & e^{-\beta_{2,\infty}y_{p,1}}e^{-\beta(r_{1})y_{p,1}}\\
+\lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)}= & e^{-\beta_{1,\infty}}e^{-\beta_{2,\infty}}\\
+\lim_{r_{1}\rightarrow\infty}V\left(r_{1,}r_{2}\right)= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}e^{-\beta_{1,\infty}y_{p,2}}e^{-\beta(r_{2})y_{p,2}}\right)^{2}\\
+\beta_{1,\infty}= & \frac{\ln\left(\frac{\sqrt{2\mathfrak{D}_{e}}}{u\left(r_{e,1}\right)}\right)}{y_{p,2}}\\
+u\left(r_{e,1},r_{e,2}\right)= & u\left(r_{e,1}\right)u\left(r_{e,2}\right)\,\text{[enforced]}\label{eq:enforced}\\
+\lim_{r_{1}\rightarrow\infty}V\left(r_{1,}r_{2}\right)= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1}\right)u\left(r_{e,2}\right)}\frac{u\left(r_{e,1}\right)}{\sqrt{2\mathfrak{D}_{e}}}e^{-\beta(r_{2})y_{p,2}}\right)^{2}\\
+= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{\sqrt{2\mathfrak{D}_{e}}u\left(r_{e,2}\right)}e^{-\beta(r_{2})y_{p,2}}\right)^{2}\\
+= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{\sqrt{2\mathfrak{D}_{e}}}f\left(r_{2}\right)\right)^{2}\\
+= & \mathfrak{D}_{e}\left(1-\frac{\sqrt{2}u\left(r_{1},r_{2}\right)}{\sqrt{\mathfrak{D}_{e}}}f\left(r_{2}\right)+\frac{u^{2}\left(r_{1},r_{2}\right)}{2\mathfrak{D}_{e}}f^{2}\left(r_{2}\right)\right)\\
+= & \mathfrak{D}_{e}-u\left(r_{1},r_{2}\right)\sqrt{2\mathfrak{D}_{e}}f\left(r_{2}\right)+\frac{u^{2}\left(r_{1},r_{2}\right)f^{2}\left(r_{2}\right)}{2}\\
+= & \mathfrak{D}_{e}-\frac{C_{6,1}\left(r_{2}\right)\frac{\sqrt{2\mathfrak{D}_{e}}e^{-\beta(r_{2})y_{p,2}}}{u\left(r_{e,2}\right)}}{r_{1}^{6}}-\frac{C_{8,1}\left(r_{2}\right)\frac{\sqrt{2\mathfrak{D}_{e}}e^{-\beta(r_{2})y_{p,2}}}{u\left(r_{e,2}\right)}}{r_{1}^{8}}+\frac{C_{6,1}\left(r_{2}\right)^{2}\frac{e^{-2\beta(r_{2})y_{p,2}}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{12}}+\frac{C_{6,1}\left(r_{2}\right)C_{8,1}\left(r_{2}\right)\frac{e^{-2\beta(r_{2})y_{p,2}}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{14}}+\frac{C_{8,1}\left(r_{2}\right)^{2}\frac{e^{-2\beta(r_{2})y_{p,2}}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{16}}\\
+\lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}V\left(r_{1,}r_{2}\right)= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}e^{-\beta_{1,\infty}}e^{-\beta_{2,\infty}}\right)^{2}\\
+= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1}\right)u\left(r_{e,2}\right)}\frac{u\left(r_{e,1}\right)}{\sqrt{2\mathfrak{D}_{e}}}\frac{u\left(r_{e,2}\right)}{\sqrt{2\mathfrak{D}_{e}}}\right)^{2}\\
+= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{2\mathfrak{D}_{e}}\right)^{2}\\
+= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{\mathfrak{D}_{e}}+\frac{u^{2}\left(r_{1},r_{2}\right)}{4\mathfrak{D}_{e}^{2}}\right)\\
+= & \mathfrak{D}_{e}-u\left(r_{1},r_{2}\right)+\frac{u^{2}\left(r_{1},r_{2}\right)}{4\mathfrak{D}_{e}^{2}}
 \end{align}
 
 \end_inset
@@ -189,84 +213,68 @@ V\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\ri
 \end_layout
 
 \begin_layout Standard
-with 
+The only issues with this formulation are the limit in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:problem1"
+
+\end_inset
+
+ and potentially the fact that 
+\begin_inset Formula $u(r_{1},r_{2})$
+\end_inset
+
+ has to be a product (Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:enforced"
+
+\end_inset
+
+), but maybe that's how the long range is supposed to look anyway.
+ 
+\end_layout
+
+\begin_layout Standard
+Let's try an alternative formulation:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{equation}
-\beta_{\infty}\equiv\lim_{r\rightarrow\infty}\beta(r)=\ln\left(\frac{2\mathfrak{D}_{e}}{u(r_{e})}\right).
-\end{equation}
+\begin{align}
+V\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1}\right)}{u\left(r_{e,1}\right)}e^{-\beta\left(r_{1}\right)y_{p}\left(r_{1}\right)}-\frac{u\left(r_{2}\right)}{u\left(r_{e,2}\right)}e^{-\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}\right)^{2}\\
+\lim_{r_{1}\rightarrow\infty}V\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1}\right)}{2\mathfrak{D}_{e}}-f\left(r_{2}\right)\right)^{2}\\
+ & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1}\right)+2\mathfrak{D}_{e}f\left(r_{2}\right)}{\mathfrak{D}_{e}}+\left(\frac{u\left(r_{1}\right)+2\mathfrak{D}_{e}f\left(r_{2}\right)}{2\mathfrak{D}_{e}}\right)^{2}\right)\\
+ & =\mathfrak{D}_{e}-u\left(r_{1}\right)+2\mathfrak{D}_{e}f\left(r_{2}\right)+\frac{u^{2}\left(r_{1}\right)+2\mathfrak{D}_{e}u\left(r_{1}\right)f\left(r_{2}\right)+4\mathfrak{D}_{e}^{2}f^{2}\left(r_{2}\right)}{4\mathfrak{D}_{e}}\\
+ & =\mathfrak{D}_{e}-u\left(r_{1}\right)+2\mathfrak{D}_{e}\frac{u\left(r_{2}\right)}{u\left(r_{e,2}\right)}e^{-\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}+\frac{u^{2}\left(r_{1}\right)+2\mathfrak{D}_{e}u\left(r_{1}\right)\frac{u\left(r_{2}\right)}{u\left(r_{e,2}\right)}e^{-\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}+4\mathfrak{D}_{e}^{2}\frac{u^{2}\left(r_{2}\right)}{u^{2}\left(r_{e,2}\right)}e^{-2\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}}{4\mathfrak{D}_{e}}\\
+ & =\mathfrak{D}_{e}-\frac{C_{6,1}\left(r_{2}\right)}{r_{1}^{6}}-\frac{C_{8,1}\left(r_{2}\right)}{r_{1}^{8}}+2\mathfrak{D}_{e}\frac{u\left(r_{2}\right)}{u\left(r_{e,2}\right)}e^{-\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}+\frac{C_{6,1}\left(r_{2}\right)^{2}/4\mathfrak{D}_{e}}{r_{1}^{12}}+\frac{C_{6,1}\left(r_{2}\right)C_{8,1}\left(r_{2}\right)/4\mathfrak{D}_{e}}{r_{1}^{14}}+\frac{C_{8,1}\left(r_{2}\right)^{2}/4\mathfrak{D}_{e}}{r_{1}^{16}}\\
+ & +\frac{C_{6,1}\left(r_{2}\right)\frac{u\left(r_{2}\right)}{u\left(r_{e,2}\right)}e^{-\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}}{2r_{1}^{6}}+\frac{C_{8,1}\left(r_{2}\right)\frac{u\left(r_{2}\right)}{u\left(r_{e,2}\right)}e^{-\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}}{2r_{1}^{8}}+\mathfrak{D}_{e}\frac{u^{2}\left(r_{2}\right)}{u^{2}\left(r_{e,2}\right)}e^{-2\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}\\
+\lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}V\left(r_{1,}r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1}\right)}{2\mathfrak{D}_{e}}-\frac{u\left(r_{2}\right)}{2\mathfrak{D}_{e}}\right)^{2}\\
+ & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1}\right)+u\left(r_{2}\right)}{\mathfrak{D}_{e}}+\left(\frac{u\left(r_{1}\right)+u\left(r_{2}\right)}{2\mathfrak{D}_{e}}\right)^{2}\right)\\
+ & =\mathfrak{D}_{e}-u\left(r_{1}\right)+u\left(r_{2}\right)+\frac{u^{2}\left(r_{1}\right)+u\left(r_{1}\right)u\left(r_{2}\right)+u^{2}\left(r_{2}\right)}{4\mathfrak{D}_{e}}\\
+ & =\mathfrak{D}_{e}-\frac{C_{6,1}\left(r_{2}\right)}{r_{1}^{6}}-\frac{C_{8,1}\left(r_{2}\right)}{r_{1}^{8}}-\frac{C_{6,2}\left(r_{1}\right)}{r_{2}^{6}}-\frac{C_{8,2}\left(r_{1}\right)}{r_{2}^{8}}\\
+ & +\frac{C_{6,1}\left(r_{2}\right)^{2}/4\mathfrak{D}_{e}}{r_{1}^{12}}+\frac{C_{6,1}\left(r_{2}\right)C_{8,1}\left(r_{2}\right)/4\mathfrak{D}_{e}}{r_{1}^{14}}+\frac{C_{8,1}\left(r_{2}\right)^{2}/4\mathfrak{D}_{e}}{r_{1}^{16}}\\
+ & +\frac{C_{6,2}\left(r_{1}\right)^{2}/4\mathfrak{D}_{e}}{r_{2}^{12}}+\frac{C_{6,2}\left(r_{1}\right)C_{8,2}\left(r_{1}\right)/4\mathfrak{D}_{e}}{r_{2}^{14}}+\frac{C_{8,2}\left(r_{1}\right)^{2}/4\mathfrak{D}_{e}}{r_{2}^{16}}\\
+ & +\frac{C_{6,1}\left(r_{2}\right)C_{6,2}\left(r_{1}\right)/4\mathfrak{D}_{e}}{r_{1}^{6}r_{2}^{6}}+\frac{C_{6,1}\left(r_{2}\right)C_{8,2}\left(r_{1}\right)/4\mathfrak{D}_{e}}{r_{1}^{6}r_{2}^{8}}+\frac{C_{8,1}\left(r_{2}\right)C_{6,2}\left(r_{1}\right)/4\mathfrak{D}_{e}}{r_{1}^{8}r_{2}^{6}}+\frac{C_{8,1}\left(r_{2}\right)C_{8,2}\left(r_{1}\right)/4\mathfrak{D}_{e}}{r_{1}^{8}r_{2}^{8}}
+\end{align}
 
 \end_inset
 
-Equations 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:VMLR"
 
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:betaPolynomial"
-
-\end_inset
-
- also depend on the radial variable
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-y_{n}^{r_{{\rm ref}}}(r)=\frac{r^{n}-r_{{\rm ref}}^{n}}{r^{n}+r_{{\rm ref}}^{n}},
-\end{equation}
-
-\end_inset
-
-where the reference distance 
-\begin_inset Formula $r_{{\rm ref}}$
-\end_inset
-
- is simply the equilibrium distance 
-\begin_inset Formula $r_{e}$
-\end_inset
-
- in most cases, but can be adjusted to optimize the fit to equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:VMLR"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-It is well known 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "LeRoy2009,Dattani2011"
-
-\end_inset
-
- that for large 
+A potential issue with the secnod formulation is that for large 
 \begin_inset Formula $r$
 \end_inset
 
- we have 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-V(r)\simeq\mathfrak{D}_{e}-u(r)+\cdots,\label{eq:VMLR_longRange}
-\end{equation}
-
+, there are a lot more 
+\begin_inset Formula $r^{6}$
 \end_inset
 
-
+ terms that need to be cancelled out, but this should be possible to do.
 \end_layout
 
 \begin_layout Standard
