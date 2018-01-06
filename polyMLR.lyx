@@ -87,13 +87,22 @@ Nike Dattani
 \end_layout
 
 \begin_layout Author Email
+
 dattani.nike@fukui.kyoto.ac.jp
 \end_layout
 
 \begin_layout Affiliation
 
 \lang british
-Fukui Institute for Fundamental Chemistry, Kyoto University, Kyoto, Japan,
+Harvard Smithsonian Center for Astrophysics, Atomic and Molecular Physics
+ Division, Cambridge, Massachusetts, USA,
+\end_layout
+
+\begin_layout Affiliation
+
+\lang british
+McMaster University, Department of Chemistry and Chemical Biology, Hamilton,
+ Onario, Canada,
 \end_layout
 
 \begin_layout Author
@@ -103,13 +112,15 @@ Yu Zhai
 \end_layout
 
 \begin_layout Author Email
+
 yuzhai@mail.huiligroup.org
 \end_layout
 
 \begin_layout Affiliation
 
 \lang british
-Jilin University, Institute of Theoretical Chemistry, Changchun, China.
+Jilin University, Institute of Theoretical Chemistry, Changchun, Jilin,
+ China.
 \end_layout
 
 \begin_layout Abstract
@@ -188,23 +199,34 @@ y_{p} & =y_{p,1}y_{p,2}\\
 \lim_{r_{1}\rightarrow\infty}\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right) & =\beta_{1,\infty}y_{p,2}+\beta\left(r_{2}\right)y_{p,2}\\
 \lim_{r_{2}\rightarrow\infty}\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right) & =\beta_{2,\infty}y_{p,1}+\beta\left(r_{1}\right)y_{p,1}\\
 \lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right) & =\beta_{1,\infty}+\beta_{2,\infty}\\
-\lim_{r_{1}\rightarrow\infty}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)}= & e^{-\beta_{1,\infty}y_{p,2}}e^{-\beta(r_{2})y_{p,2}}\\
-\lim_{r_{2}\rightarrow\infty}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)}= & e^{-\beta_{2,\infty}y_{p,1}}e^{-\beta(r_{1})y_{p,1}}\\
-\lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)}= & e^{-\beta_{1,\infty}}e^{-\beta_{2,\infty}}\\
-\lim_{r_{1}\rightarrow\infty}V\left(r_{1,}r_{2}\right)= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}e^{-\beta_{1,\infty}y_{p,2}}e^{-\beta(r_{2})y_{p,2}}\right)^{2}\\
-\beta_{1,\infty}= & \frac{\ln\left(\frac{\sqrt{2\mathfrak{D}_{e}}}{u\left(r_{e,1}\right)}\right)}{y_{p,2}}\\
-u\left(r_{e,1},r_{e,2}\right)= & u\left(r_{e,1}\right)u\left(r_{e,2}\right)\,\text{[enforced]}\label{eq:enforced}\\
-\lim_{r_{1}\rightarrow\infty}V\left(r_{1,}r_{2}\right)= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1}\right)u\left(r_{e,2}\right)}\frac{u\left(r_{e,1}\right)}{\sqrt{2\mathfrak{D}_{e}}}e^{-\beta(r_{2})y_{p,2}}\right)^{2}\\
-= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{\sqrt{2\mathfrak{D}_{e}}u\left(r_{e,2}\right)}e^{-\beta(r_{2})y_{p,2}}\right)^{2}\\
-= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{\sqrt{2\mathfrak{D}_{e}}}f\left(r_{2}\right)\right)^{2}\\
-= & \mathfrak{D}_{e}\left(1-\frac{\sqrt{2}u\left(r_{1},r_{2}\right)}{\sqrt{\mathfrak{D}_{e}}}f\left(r_{2}\right)+\frac{u^{2}\left(r_{1},r_{2}\right)}{2\mathfrak{D}_{e}}f^{2}\left(r_{2}\right)\right)\\
-= & \mathfrak{D}_{e}-u\left(r_{1},r_{2}\right)\sqrt{2\mathfrak{D}_{e}}f\left(r_{2}\right)+\frac{u^{2}\left(r_{1},r_{2}\right)f^{2}\left(r_{2}\right)}{2}\\
-= & \mathfrak{D}_{e}-\frac{C_{6,1}\left(r_{2}\right)\frac{\sqrt{2\mathfrak{D}_{e}}e^{-\beta(r_{2})y_{p,2}}}{u\left(r_{e,2}\right)}}{r_{1}^{6}}-\frac{C_{8,1}\left(r_{2}\right)\frac{\sqrt{2\mathfrak{D}_{e}}e^{-\beta(r_{2})y_{p,2}}}{u\left(r_{e,2}\right)}}{r_{1}^{8}}+\frac{C_{6,1}\left(r_{2}\right)^{2}\frac{e^{-2\beta(r_{2})y_{p,2}}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{12}}+\frac{C_{6,1}\left(r_{2}\right)C_{8,1}\left(r_{2}\right)\frac{e^{-2\beta(r_{2})y_{p,2}}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{14}}+\frac{C_{8,1}\left(r_{2}\right)^{2}\frac{e^{-2\beta(r_{2})y_{p,2}}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{16}}\\
-\lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}V\left(r_{1,}r_{2}\right)= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}e^{-\beta_{1,\infty}}e^{-\beta_{2,\infty}}\right)^{2}\\
-= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1}\right)u\left(r_{e,2}\right)}\frac{u\left(r_{e,1}\right)}{\sqrt{2\mathfrak{D}_{e}}}\frac{u\left(r_{e,2}\right)}{\sqrt{2\mathfrak{D}_{e}}}\right)^{2}\\
-= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{2\mathfrak{D}_{e}}\right)^{2}\\
-= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{\mathfrak{D}_{e}}+\frac{u^{2}\left(r_{1},r_{2}\right)}{4\mathfrak{D}_{e}^{2}}\right)\\
-= & \mathfrak{D}_{e}-u\left(r_{1},r_{2}\right)+\frac{u^{2}\left(r_{1},r_{2}\right)}{4\mathfrak{D}_{e}^{2}}
+\lim_{r_{1}\rightarrow\infty}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)} & =e^{-\beta_{1,\infty}y_{p,2}}e^{-\beta(r_{2})y_{p,2}}\\
+\lim_{r_{2}\rightarrow\infty}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)} & =e^{-\beta_{2,\infty}y_{p,1}}e^{-\beta(r_{1})y_{p,1}}\\
+\lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)} & =e^{-\beta_{1,\infty}}e^{-\beta_{2,\infty}}\\
+\lim_{r_{1}\rightarrow\infty}V\left(r_{1,}r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}e^{-\beta_{1,\infty}y_{p,2}}e^{-\beta(r_{2})y_{p,2}}\right)^{2}\\
+\beta_{1,\infty} & =\frac{\ln\left(\frac{\sqrt{2\mathfrak{D}_{e}}}{u\left(r_{e,1}\right)}\right)}{y_{p,2}}\\
+u\left(r_{e,1},r_{e,2}\right) & =u\left(r_{e,1}\right)u\left(r_{e,2}\right)\,\text{[enforced]}\label{eq:enforced}\\
+\lim_{r_{1}\rightarrow\infty}V\left(r_{1,}r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1}\right)u\left(r_{e,2}\right)}\frac{u\left(r_{e,1}\right)}{\sqrt{2\mathfrak{D}_{e}}}e^{-\beta(r_{2})y_{p,2}}\right)^{2}\\
+ & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{\sqrt{2\mathfrak{D}_{e}}u\left(r_{e,2}\right)}e^{-\beta(r_{2})y_{p,2}}\right)^{2}\\
+ & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{\sqrt{2\mathfrak{D}_{e}}}f\left(r_{2}\right)\right)^{2}\\
+ & =\mathfrak{D}_{e}\left(1-\frac{\sqrt{2}u\left(r_{1},r_{2}\right)}{\sqrt{\mathfrak{D}_{e}}}f\left(r_{2}\right)+\frac{u^{2}\left(r_{1},r_{2}\right)}{2\mathfrak{D}_{e}}f^{2}\left(r_{2}\right)\right)\\
+ & =\mathfrak{D}_{e}-u\left(r_{1},r_{2}\right)\sqrt{2\mathfrak{D}_{e}}f\left(r_{2}\right)+\frac{u^{2}\left(r_{1},r_{2}\right)f^{2}\left(r_{2}\right)}{2}\\
+ & =\mathfrak{D}_{e}-\frac{C_{6,1}\left(r_{2}\right)\frac{\sqrt{2\mathfrak{D}_{e}}e^{-\beta(r_{2})y_{p,2}}}{u\left(r_{e,2}\right)}}{r_{1}^{6}}-\frac{C_{8,1}\left(r_{2}\right)\frac{\sqrt{2\mathfrak{D}_{e}}e^{-\beta(r_{2})y_{p,2}}}{u\left(r_{e,2}\right)}}{r_{1}^{8}}\\
+ & +\frac{C_{6,1}\left(r_{2}\right)^{2}\frac{e^{-2\beta(r_{2})y_{p,2}}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{12}}+\frac{C_{6,1}\left(r_{2}\right)C_{8,1}\left(r_{2}\right)\frac{e^{-2\beta(r_{2})y_{p,2}}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{14}}+\frac{C_{8,1}\left(r_{2}\right)^{2}\frac{e^{-2\beta(r_{2})y_{p,2}}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{16}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}V\left(r_{1,}r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}e^{-\beta_{1,\infty}}e^{-\beta_{2,\infty}}\right)^{2}\\
+ & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1}\right)u\left(r_{e,2}\right)}\frac{u\left(r_{e,1}\right)}{\sqrt{2\mathfrak{D}_{e}}}\frac{u\left(r_{e,2}\right)}{\sqrt{2\mathfrak{D}_{e}}}\right)^{2}\\
+ & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{2\mathfrak{D}_{e}}\right)^{2}\\
+ & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{\mathfrak{D}_{e}}+\frac{u^{2}\left(r_{1},r_{2}\right)}{4\mathfrak{D}_{e}^{2}}\right)\\
+ & =\mathfrak{D}_{e}-u\left(r_{1},r_{2}\right)+\frac{u^{2}\left(r_{1},r_{2}\right)}{4\mathfrak{D}_{e}^{2}}
 \end{align}
 
 \end_inset
@@ -248,8 +270,10 @@ V\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1}\right)}{
 \lim_{r_{1}\rightarrow\infty}V\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1}\right)}{2\mathfrak{D}_{e}}-f\left(r_{2}\right)\right)^{2}\\
  & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1}\right)+2\mathfrak{D}_{e}f\left(r_{2}\right)}{\mathfrak{D}_{e}}+\left(\frac{u\left(r_{1}\right)+2\mathfrak{D}_{e}f\left(r_{2}\right)}{2\mathfrak{D}_{e}}\right)^{2}\right)\\
  & =\mathfrak{D}_{e}-u\left(r_{1}\right)+2\mathfrak{D}_{e}f\left(r_{2}\right)+\frac{u^{2}\left(r_{1}\right)+2\mathfrak{D}_{e}u\left(r_{1}\right)f\left(r_{2}\right)+4\mathfrak{D}_{e}^{2}f^{2}\left(r_{2}\right)}{4\mathfrak{D}_{e}}\\
- & =\mathfrak{D}_{e}-u\left(r_{1}\right)+2\mathfrak{D}_{e}\frac{u\left(r_{2}\right)}{u\left(r_{e,2}\right)}e^{-\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}+\frac{u^{2}\left(r_{1}\right)+2\mathfrak{D}_{e}u\left(r_{1}\right)\frac{u\left(r_{2}\right)}{u\left(r_{e,2}\right)}e^{-\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}+4\mathfrak{D}_{e}^{2}\frac{u^{2}\left(r_{2}\right)}{u^{2}\left(r_{e,2}\right)}e^{-2\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}}{4\mathfrak{D}_{e}}\\
- & =\mathfrak{D}_{e}-\frac{C_{6,1}\left(r_{2}\right)}{r_{1}^{6}}-\frac{C_{8,1}\left(r_{2}\right)}{r_{1}^{8}}+2\mathfrak{D}_{e}\frac{u\left(r_{2}\right)}{u\left(r_{e,2}\right)}e^{-\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}+\frac{C_{6,1}\left(r_{2}\right)^{2}/4\mathfrak{D}_{e}}{r_{1}^{12}}+\frac{C_{6,1}\left(r_{2}\right)C_{8,1}\left(r_{2}\right)/4\mathfrak{D}_{e}}{r_{1}^{14}}+\frac{C_{8,1}\left(r_{2}\right)^{2}/4\mathfrak{D}_{e}}{r_{1}^{16}}\\
+ & =\mathfrak{D}_{e}-u\left(r_{1}\right)+2\mathfrak{D}_{e}\frac{u\left(r_{2}\right)}{u\left(r_{e,2}\right)}e^{-\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}\\
+ & +\frac{u^{2}\left(r_{1}\right)+2\mathfrak{D}_{e}u\left(r_{1}\right)\frac{u\left(r_{2}\right)}{u\left(r_{e,2}\right)}e^{-\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}+4\mathfrak{D}_{e}^{2}\frac{u^{2}\left(r_{2}\right)}{u^{2}\left(r_{e,2}\right)}e^{-2\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}}{4\mathfrak{D}_{e}}\\
+ & =\mathfrak{D}_{e}-\frac{C_{6,1}\left(r_{2}\right)}{r_{1}^{6}}-\frac{C_{8,1}\left(r_{2}\right)}{r_{1}^{8}}+2\mathfrak{D}_{e}\frac{u\left(r_{2}\right)}{u\left(r_{e,2}\right)}e^{-\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}\\
+ & +\frac{C_{6,1}\left(r_{2}\right)^{2}/4\mathfrak{D}_{e}}{r_{1}^{12}}+\frac{C_{6,1}\left(r_{2}\right)C_{8,1}\left(r_{2}\right)/4\mathfrak{D}_{e}}{r_{1}^{14}}+\frac{C_{8,1}\left(r_{2}\right)^{2}/4\mathfrak{D}_{e}}{r_{1}^{16}}\\
  & +\frac{C_{6,1}\left(r_{2}\right)\frac{u\left(r_{2}\right)}{u\left(r_{e,2}\right)}e^{-\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}}{2r_{1}^{6}}+\frac{C_{8,1}\left(r_{2}\right)\frac{u\left(r_{2}\right)}{u\left(r_{e,2}\right)}e^{-\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}}{2r_{1}^{8}}+\mathfrak{D}_{e}\frac{u^{2}\left(r_{2}\right)}{u^{2}\left(r_{e,2}\right)}e^{-2\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}\\
 \lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}V\left(r_{1,}r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1}\right)}{2\mathfrak{D}_{e}}-\frac{u\left(r_{2}\right)}{2\mathfrak{D}_{e}}\right)^{2}\\
  & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1}\right)+u\left(r_{2}\right)}{\mathfrak{D}_{e}}+\left(\frac{u\left(r_{1}\right)+u\left(r_{2}\right)}{2\mathfrak{D}_{e}}\right)^{2}\right)\\
@@ -282,7 +306,7 @@ A potential issue with the secnod formulation is that for large
 \lang british
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-bibfiles "../../Papers/library,C:/Users/Nike/Desktop/Dropbox/NSD/Papers/library,C:/Users/Richard/Documents/Bibtex/library,apssamp"
+bibfiles "/home/nike/pCloud Sync/library,../../Papers/library,C:/Users/Nike/Desktop/Dropbox/NSD/Papers/library,C:/Users/Richard/Documents/Bibtex/library,apssamp"
 options "apsrev4-1"
 
 \end_inset
