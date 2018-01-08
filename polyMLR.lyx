@@ -177,7 +177,15 @@ One option we can take, is to just make every radially dependent variable
 \begin_inset Formula $\left(r_{1},r_{2}\right)$
 \end_inset
 
-:
+ (
+\color red
+it is assumed that all 
+\begin_inset Formula $C_{m}$
+\end_inset
+
+ coefficients are DAMPED, because otherwise none of this would work
+\color inherit
+):
 \end_layout
 
 \begin_layout Standard
@@ -190,28 +198,27 @@ V\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\ri
 \lim_{r_{2}\rightarrow\infty}\beta & =\beta_{2,\infty}+\beta(r_{1})\\
 \lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}\beta & =\beta_{1,\infty}+\beta_{2,\infty}\\
  & =\beta_{\infty}\\
-y_{p} & =y_{p,1}y_{p,2}\\
- & =\left(\frac{r_{1}^{p}-r_{e,1}^{p}}{r_{1}^{p}+r_{e,1}^{p}}\right)\left(\frac{r_{2}^{p}-r_{e,2}^{p}}{r_{2}^{p}+r_{e,2}^{p}}\right)\\
-\lim_{r_{1}\rightarrow\infty}y_{p} & =y_{p,2}\\
-\lim_{r_{2}\rightarrow\infty}y_{p} & =y_{p,1}\\
+y_{p} & =\frac{\left(y_{p,1+}y_{p,2}\right)}{N_{{\rm radial\,coordinates}}}\\
+\lim_{r_{1}\rightarrow\infty}y_{p} & =\frac{1+y_{p,2}}{2}\\
+\lim_{r_{2}\rightarrow\infty}y_{p} & =\frac{1+y_{p,1}}{2}\\
 \lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}y_{p} & =1\\
-\lim_{\left(r_{1},r_{2}\right)\rightarrow0}y_{p} & =1\,\text{[Problem \#1] !}\label{eq:problem1}\\
-\lim_{r_{1}\rightarrow\infty}\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right) & =\beta_{1,\infty}y_{p,2}+\beta\left(r_{2}\right)y_{p,2}\\
-\lim_{r_{2}\rightarrow\infty}\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right) & =\beta_{2,\infty}y_{p,1}+\beta\left(r_{1}\right)y_{p,1}\\
+\lim_{\left(r_{1},r_{2}\right)\rightarrow0}y_{p} & =-1\label{eq:problem1}\\
+\lim_{r_{1}\rightarrow\infty}\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right) & =\beta_{1,\infty}(1+y_{p,2})/2+\beta\left(r_{2}\right)(1+y_{p,2})/2\\
+\lim_{r_{2}\rightarrow\infty}\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right) & =\beta_{2,\infty}(1+y_{p,1})/2+\beta\left(r_{1}\right)(1+y_{p,1})/2\\
 \lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right) & =\beta_{1,\infty}+\beta_{2,\infty}\\
-\lim_{r_{1}\rightarrow\infty}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)} & =e^{-\beta_{1,\infty}y_{p,2}}e^{-\beta(r_{2})y_{p,2}}\\
-\lim_{r_{2}\rightarrow\infty}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)} & =e^{-\beta_{2,\infty}y_{p,1}}e^{-\beta(r_{1})y_{p,1}}\\
+\lim_{r_{1}\rightarrow\infty}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)} & =e^{-\beta_{1,\infty}(1+y_{p,2})/2}e^{-\beta(r_{2})(1+y_{p,2})/2}\\
+\lim_{r_{2}\rightarrow\infty}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)} & =e^{-\beta_{2,\infty}(1+y_{p,1})/2}e^{-\beta(r_{1})(1+y_{p,1})/2}\\
 \lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)} & =e^{-\beta_{1,\infty}}e^{-\beta_{2,\infty}}\\
-\lim_{r_{1}\rightarrow\infty}V\left(r_{1,}r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}e^{-\beta_{1,\infty}y_{p,2}}e^{-\beta(r_{2})y_{p,2}}\right)^{2}\\
-\beta_{1,\infty} & =\frac{\ln\left(\frac{\sqrt{2\mathfrak{D}_{e}}}{u\left(r_{e,1}\right)}\right)}{y_{p,2}}\\
+\lim_{r_{1}\rightarrow\infty}V\left(r_{1,}r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}e^{-\beta_{1,\infty}(1+y_{p,2})/2}e^{-\beta(r_{2})(1+y_{p,2})/2}\right)^{2}\\
+\beta_{1,\infty} & =\frac{2\ln\left(\frac{\sqrt{2\mathfrak{D}_{e}}}{u\left(r_{e,1}\right)}\right)}{1+y_{p,2}}\\
 u\left(r_{e,1},r_{e,2}\right) & =u\left(r_{e,1}\right)u\left(r_{e,2}\right)\,\text{[enforced]}\label{eq:enforced}\\
-\lim_{r_{1}\rightarrow\infty}V\left(r_{1,}r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1}\right)u\left(r_{e,2}\right)}\frac{u\left(r_{e,1}\right)}{\sqrt{2\mathfrak{D}_{e}}}e^{-\beta(r_{2})y_{p,2}}\right)^{2}\\
- & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{\sqrt{2\mathfrak{D}_{e}}u\left(r_{e,2}\right)}e^{-\beta(r_{2})y_{p,2}}\right)^{2}\\
+\lim_{r_{1}\rightarrow\infty}V\left(r_{1,}r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1}\right)u\left(r_{e,2}\right)}\frac{u\left(r_{e,1}\right)}{\sqrt{2\mathfrak{D}_{e}}}e^{-\beta(r_{2})(1+y_{p,2})/2}\right)^{2}\\
+ & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{\sqrt{2\mathfrak{D}_{e}}u\left(r_{e,2}\right)}e^{-\beta(r_{2})(1+y_{p,2})/2}\right)^{2}\\
  & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{\sqrt{2\mathfrak{D}_{e}}}f\left(r_{2}\right)\right)^{2}\\
  & =\mathfrak{D}_{e}\left(1-\frac{\sqrt{2}u\left(r_{1},r_{2}\right)}{\sqrt{\mathfrak{D}_{e}}}f\left(r_{2}\right)+\frac{u^{2}\left(r_{1},r_{2}\right)}{2\mathfrak{D}_{e}}f^{2}\left(r_{2}\right)\right)\\
  & =\mathfrak{D}_{e}-u\left(r_{1},r_{2}\right)\sqrt{2\mathfrak{D}_{e}}f\left(r_{2}\right)+\frac{u^{2}\left(r_{1},r_{2}\right)f^{2}\left(r_{2}\right)}{2}\\
- & =\mathfrak{D}_{e}-\frac{C_{6,1}\left(r_{2}\right)\frac{\sqrt{2\mathfrak{D}_{e}}e^{-\beta(r_{2})y_{p,2}}}{u\left(r_{e,2}\right)}}{r_{1}^{6}}-\frac{C_{8,1}\left(r_{2}\right)\frac{\sqrt{2\mathfrak{D}_{e}}e^{-\beta(r_{2})y_{p,2}}}{u\left(r_{e,2}\right)}}{r_{1}^{8}}\\
- & +\frac{C_{6,1}\left(r_{2}\right)^{2}\frac{e^{-2\beta(r_{2})y_{p,2}}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{12}}+\frac{C_{6,1}\left(r_{2}\right)C_{8,1}\left(r_{2}\right)\frac{e^{-2\beta(r_{2})y_{p,2}}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{14}}+\frac{C_{8,1}\left(r_{2}\right)^{2}\frac{e^{-2\beta(r_{2})y_{p,2}}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{16}}
+ & =\mathfrak{D}_{e}-\frac{C_{6,1}\left(r_{2}\right)\frac{\sqrt{2\mathfrak{D}_{e}}e^{-\beta(r_{2})(1+y_{p,2})/2}}{u\left(r_{e,2}\right)}}{r_{1}^{6}}-\frac{C_{8,1}\left(r_{2}\right)\frac{\sqrt{2\mathfrak{D}_{e}}e^{-\beta(r_{2})(1+y_{p,2})/2}}{u\left(r_{e,2}\right)}}{r_{1}^{8}}\label{eq:limitOfR1forFirstModel}\\
+ & +\frac{C_{6,1}\left(r_{2}\right)^{2}\frac{e^{-2\beta(r_{2})(1+y_{p,2})/2}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{12}}+\frac{C_{6,1}\left(r_{2}\right)C_{8,1}\left(r_{2}\right)\frac{e^{-2\beta(r_{2})(1+y_{p,2})/2}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{14}}+\frac{C_{8,1}\left(r_{2}\right)^{2}\frac{e^{-2\beta(r_{2})(1+y_{p,2})/2}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{16}}
 \end{align}
 
 \end_inset
@@ -226,7 +233,7 @@ u\left(r_{e,1},r_{e,2}\right) & =u\left(r_{e,1}\right)u\left(r_{e,2}\right)\,\te
  & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1}\right)u\left(r_{e,2}\right)}\frac{u\left(r_{e,1}\right)}{\sqrt{2\mathfrak{D}_{e}}}\frac{u\left(r_{e,2}\right)}{\sqrt{2\mathfrak{D}_{e}}}\right)^{2}\\
  & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{2\mathfrak{D}_{e}}\right)^{2}\\
  & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{\mathfrak{D}_{e}}+\frac{u^{2}\left(r_{1},r_{2}\right)}{4\mathfrak{D}_{e}^{2}}\right)\\
- & =\mathfrak{D}_{e}-u\left(r_{1},r_{2}\right)+\frac{u^{2}\left(r_{1},r_{2}\right)}{4\mathfrak{D}_{e}^{2}}
+ & =\mathfrak{D}_{e}-u\left(r_{1},r_{2}\right)+\frac{u^{2}\left(r_{1},r_{2}\right)}{4\mathfrak{D}_{e}^{2}}\label{eq:final1}
 \end{align}
 
 \end_inset
@@ -235,19 +242,32 @@ u\left(r_{e,1},r_{e,2}\right) & =u\left(r_{e,1}\right)u\left(r_{e,2}\right)\,\te
 \end_layout
 
 \begin_layout Standard
-The only issues with this formulation are the limit in Eq.
+Eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "eq:problem1"
+reference "eq:final1"
 
 \end_inset
 
- and potentially the fact that 
-\begin_inset Formula $u(r_{1},r_{2})$
+ looks almost exactly the same as in the 1D MLR case, which is promising,
+ but:
+\end_layout
+
+\begin_layout Enumerate
+Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:limitOfR1forFirstModel"
+
 \end_inset
 
- has to be a product (Eq.
+ might not have the desired form, 
+\end_layout
+
+\begin_layout Enumerate
+Eq.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -255,11 +275,20 @@ reference "eq:enforced"
 
 \end_inset
 
-), but maybe that's how the long range is supposed to look anyway.
- 
+ means that 
+\begin_inset Formula $u(r_{1},r_{2})$
+\end_inset
+
+ is enforced to be 
+\begin_inset Formula $u(r_{1})u(r_{2})$
+\end_inset
+
+ when at the global equilibrium – it should be damped so much that this
+ is numerically irrelevant at the global equilibrium, but it is sub-ideal
+ that the units are energy squared.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Section*
 Let's try an alternative formulation:
 \end_layout
 
@@ -277,11 +306,11 @@ V\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1}\right)}{
  & +\frac{C_{6,1}\left(r_{2}\right)\frac{u\left(r_{2}\right)}{u\left(r_{e,2}\right)}e^{-\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}}{2r_{1}^{6}}+\frac{C_{8,1}\left(r_{2}\right)\frac{u\left(r_{2}\right)}{u\left(r_{e,2}\right)}e^{-\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}}{2r_{1}^{8}}+\mathfrak{D}_{e}\frac{u^{2}\left(r_{2}\right)}{u^{2}\left(r_{e,2}\right)}e^{-2\beta\left(r_{2}\right)y_{p}\left(r_{2}\right)}\\
 \lim_{\left(r_{1},r_{2}\right)\rightarrow\infty}V\left(r_{1,}r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1}\right)}{2\mathfrak{D}_{e}}-\frac{u\left(r_{2}\right)}{2\mathfrak{D}_{e}}\right)^{2}\\
  & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1}\right)+u\left(r_{2}\right)}{\mathfrak{D}_{e}}+\left(\frac{u\left(r_{1}\right)+u\left(r_{2}\right)}{2\mathfrak{D}_{e}}\right)^{2}\right)\\
- & =\mathfrak{D}_{e}-u\left(r_{1}\right)+u\left(r_{2}\right)+\frac{u^{2}\left(r_{1}\right)+u\left(r_{1}\right)u\left(r_{2}\right)+u^{2}\left(r_{2}\right)}{4\mathfrak{D}_{e}}\\
+ & =\mathfrak{D}_{e}-u\left(r_{1}\right)-u\left(r_{2}\right)+\frac{u^{2}\left(r_{1}\right)+2u\left(r_{1}\right)u\left(r_{2}\right)+u^{2}\left(r_{2}\right)}{4\mathfrak{D}_{e}}\\
  & =\mathfrak{D}_{e}-\frac{C_{6,1}\left(r_{2}\right)}{r_{1}^{6}}-\frac{C_{8,1}\left(r_{2}\right)}{r_{1}^{8}}-\frac{C_{6,2}\left(r_{1}\right)}{r_{2}^{6}}-\frac{C_{8,2}\left(r_{1}\right)}{r_{2}^{8}}\\
- & +\frac{C_{6,1}\left(r_{2}\right)^{2}/4\mathfrak{D}_{e}}{r_{1}^{12}}+\frac{C_{6,1}\left(r_{2}\right)C_{8,1}\left(r_{2}\right)/4\mathfrak{D}_{e}}{r_{1}^{14}}+\frac{C_{8,1}\left(r_{2}\right)^{2}/4\mathfrak{D}_{e}}{r_{1}^{16}}\\
- & +\frac{C_{6,2}\left(r_{1}\right)^{2}/4\mathfrak{D}_{e}}{r_{2}^{12}}+\frac{C_{6,2}\left(r_{1}\right)C_{8,2}\left(r_{1}\right)/4\mathfrak{D}_{e}}{r_{2}^{14}}+\frac{C_{8,2}\left(r_{1}\right)^{2}/4\mathfrak{D}_{e}}{r_{2}^{16}}\\
- & +\frac{C_{6,1}\left(r_{2}\right)C_{6,2}\left(r_{1}\right)/4\mathfrak{D}_{e}}{r_{1}^{6}r_{2}^{6}}+\frac{C_{6,1}\left(r_{2}\right)C_{8,2}\left(r_{1}\right)/4\mathfrak{D}_{e}}{r_{1}^{6}r_{2}^{8}}+\frac{C_{8,1}\left(r_{2}\right)C_{6,2}\left(r_{1}\right)/4\mathfrak{D}_{e}}{r_{1}^{8}r_{2}^{6}}+\frac{C_{8,1}\left(r_{2}\right)C_{8,2}\left(r_{1}\right)/4\mathfrak{D}_{e}}{r_{1}^{8}r_{2}^{8}}
+ & +\frac{C_{6,1}\left(r_{2}\right)^{2}/4\mathfrak{D}_{e}}{r_{1}^{12}}+\frac{C_{6,1}\left(r_{2}\right)C_{8,1}\left(r_{2}\right)/2\mathfrak{D}_{e}}{r_{1}^{14}}+\frac{C_{8,1}\left(r_{2}\right)^{2}/4\mathfrak{D}_{e}}{r_{1}^{16}}\\
+ & +\frac{C_{6,2}\left(r_{1}\right)^{2}/4\mathfrak{D}_{e}}{r_{2}^{12}}+\frac{C_{6,2}\left(r_{1}\right)C_{8,2}\left(r_{1}\right)/2\mathfrak{D}_{e}}{r_{2}^{14}}+\frac{C_{8,2}\left(r_{1}\right)^{2}/4\mathfrak{D}_{e}}{r_{2}^{16}}\\
+ & +\frac{C_{6,1}\left(r_{2}\right)C_{6,2}\left(r_{1}\right)/2\mathfrak{D}_{e}}{r_{1}^{6}r_{2}^{6}}+\frac{C_{6,1}\left(r_{2}\right)C_{8,2}\left(r_{1}\right)/2\mathfrak{D}_{e}}{r_{1}^{6}r_{2}^{8}}+\frac{C_{8,1}\left(r_{2}\right)C_{6,2}\left(r_{1}\right)/2\mathfrak{D}_{e}}{r_{1}^{8}r_{2}^{6}}+\frac{C_{8,1}\left(r_{2}\right)C_{8,2}\left(r_{1}\right)/2\mathfrak{D}_{e}}{r_{1}^{8}r_{2}^{8}}
 \end{align}
 
 \end_inset
@@ -290,7 +319,7 @@ V\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1}\right)}{
 \end_layout
 
 \begin_layout Standard
-A potential issue with the secnod formulation is that for large 
+A potential issue with the second formulation is that for large 
 \begin_inset Formula $r$
 \end_inset
 
@@ -298,7 +327,281 @@ A potential issue with the secnod formulation is that for large
 \begin_inset Formula $r^{6}$
 \end_inset
 
- terms that need to be cancelled out, but this should be possible to do.
+ terms that need to be cancelled out, but this should be possible to do,
+ similar to the way we did it for 
+\begin_inset Formula $C_{6}^{{\rm adj}}$
+\end_inset
+
+, but now 
+\begin_inset Formula $C_{6}^{{\rm adj}}$
+\end_inset
+
+ is a function of 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ or 
+\begin_inset Formula $r_{1}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+C_{6,1}(r_{2}) & \rightarrow C_{6,1}(r_{2})-\frac{C_{6,1}\left(r_{2}\right)C_{6,2}\left(r_{1}\right)}{4\mathfrak{D}_{e}r_{2}^{6}}\\
+C_{6,1}^{{\rm adj}}(r_{2}) & =C_{6,1}(r_{2})\left(1-\frac{C_{6,2}\left(r_{1}\right)}{4\mathfrak{D}_{e}r_{2}^{6}}\right).
+\end{align}
+
+\end_inset
+
+
+\series bold
+\color red
+Unfortunately this appears to be much harder than for the case of 
+\begin_inset Formula $C_{6}^{{\rm adj}}$
+\end_inset
+
+ coming from 
+\begin_inset Formula $C_{3}$
+\end_inset
+
+.
+
+\series default
+\color inherit
+ Here is it is coming from 
+\begin_inset Formula $C_{6}$
+\end_inset
+
+ itself, and not arising from a 
+\begin_inset Formula $u(r)^{2}$
+\end_inset
+
+ term, but a term linear in 
+\begin_inset Formula $u(r).$
+\end_inset
+
+ Essentially we have:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+-u\left(r_{1}\right)-u\left(r_{2}\right)+u\left(r_{1}\right)^{2}+u\left(r_{1}\right)u\left(r_{2}\right)+u\left(r_{2}\right)^{2},
+\end{equation}
+
+\end_inset
+
+and while the squared terms are usually much smaller than the first two
+ terms, the 
+\begin_inset Formula $u(r_{1})u(r_{2})$
+\end_inset
+
+ term NEEDS to be removed some how because we have:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{C_{6,1}\left(r_{2}\right)}{r_{1}^{6}}+\frac{C_{6,1}\left(r_{2}\right)C_{6,2}\left(r_{1}\right)}{r_{1}^{6}r_{2}^{6}}
+\end{equation}
+
+\end_inset
+
+and no matter what we subtract from 
+\begin_inset Formula $C_{6,1}\left(r_{2}\right)$
+\end_inset
+
+ in 
+\begin_inset Formula $u(r)$
+\end_inset
+
+ will show up again in the 
+\begin_inset Formula $u(r_{1})u(r_{2})$
+\end_inset
+
+ term.
+\end_layout
+
+\begin_layout Section*
+
+\color black
+We therefore turn to a potential which doesn't have a quadratic long-range
+ term (the DELR)
+\end_layout
+
+\begin_layout Standard
+We first try the second way (using a summation) because that turned out
+ to be a lot easier to think about:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2}\right) & =\left(A_{1}e^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}-B_{1}e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}+A_{2}e^{-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-B_{2}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}+\mathfrak{D}_{e}\right)-u\left(r_{1},r_{2}\right)\\
+A_{i} & =\mathfrak{D}_{e,i}-u\left(r_{i,e}\right)-\left(\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,i}}\right)/\beta_{i,0}\\
+B_{i} & =2\mathfrak{D}_{e,i}-2u\left(r_{i,e}\right)-\left(\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,i}}\right)/\beta_{i,0}\\
+\left.V\left(r_{1},r_{2}\right)\right|_{u\left(r_{1},r_{2}\right)=0} & =\left(\mathfrak{D}_{e,1}e^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}-2\mathfrak{D}_{e,1}e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}+\mathfrak{D}_{e,2}e^{-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-2\mathfrak{D}_{e,2}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}\right)\\
+ & =\mathfrak{D}_{e,1}\left(1-e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}\right)^{2}+\mathfrak{D}_{e,2}\left(1-e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}\right)^{2},
+\end{align}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathfrak{D}_{e,i}$
+\end_inset
+
+ is the 
+\begin_inset Formula $\mathfrak{D}_{e}$
+\end_inset
+
+ for the 1D potential along the 
+\begin_inset Formula $\left\{ r_{j}=r_{j,e}\right\} _{j\ne i}$
+\end_inset
+
+ slice.
+ An immediate problem is that for a symmetric potetial, 
+\begin_inset Formula $\mathfrak{D}_{e}$
+\end_inset
+
+ should be 
+\begin_inset Formula $\mathfrak{D}_{e}=\mathfrak{D}_{e,1}=\mathfrak{D}_{e,2}$
+\end_inset
+
+ but instead we have 
+\begin_inset Formula $\mathfrak{D}_{e}=\mathfrak{D}_{e,1}+\mathfrak{D}_{e,2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We can therefore try the first way (making each function of 
+\begin_inset Formula $r$
+\end_inset
+
+ a function of two 
+\begin_inset Formula $r$
+\end_inset
+
+'s):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2}\right) & =\left(Ae^{-2\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}-Be^{-\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}\right)-u\left(r_{1},r_{2}\right)\\
+A & =\mathfrak{D}_{e}-u\left(r_{e,1},r_{e,2}\right)-\left(\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,1}}+\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,2}}\right)/\beta_{0}\\
+B & =2\mathfrak{D}_{e}-2u\left(r_{e,1},r_{e,2}\right)-\left(\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,1}}+\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,2}}\right)/\beta_{0}\\
+\left.V\left(r_{1},r_{2}\right)\right|_{u\left(r_{1},r_{2}\right)=0} & =\left(\mathfrak{D}_{e}e^{-2\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}-2\mathfrak{D}_{e}e^{-\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}\right)\\
+ & =\mathfrak{D}_{e}\left(1-e^{-\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}\right)^{2}.
+\end{align}
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The problem here is that if 
+\begin_inset Formula $r_{1}\rightarrow\infty$
+\end_inset
+
+, then the whole function goes (exponentially) to 
+\begin_inset Formula $\mathfrak{D}_{e}$
+\end_inset
+
+ even though there might still be some 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ dependence.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A better way might be the following:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2}\right) & =\left(Ae^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-Be^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}\right)-u\left(r_{1},r_{2}\right)\\
+ & =\left(Ae^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}e^{-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-Be^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}\right)-u\left(r_{1},r_{2}\right)\\
+ & =\left(Ae^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}e^{-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-Be^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}\right)-u\left(r_{1},r_{2}\right)\\
+\left.V\left(r_{1},r_{2}\right)\right|_{u\left(r_{1},r_{2}\right)=0} & =\left(\mathfrak{D}_{e}e^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}e^{-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-2\mathfrak{D}_{e}e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}\right)\\
+ & =\mathfrak{D}_{e}\left(1-e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}\right)^{2}\label{eq:ultimate}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size large
+\color red
+Of all candidates, Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ultimate"
+
+\end_inset
+
+ seems to be the best choice.
+\end_layout
+
+\begin_layout Section*
+2D Morse potential
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2}\right)= & \mathfrak{D}_{e}\left(1-e^{-\beta_{1}\left(r_{1}-r_{1,e}\right)}\right)^{2}\left(1-e^{-\beta_{2}\left(r_{2}-r_{2,e}\right)}\right)^{2}\\
+V\left(r_{1},r_{2}\right)= & \mathfrak{D}_{e}\left(1-e^{-\beta_{1}\left(r_{1}-r_{1,e}\right)}e^{-\beta_{2}\left(r_{2}-r_{2,e}\right)}\right)^{2}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The first one only becomes a Morse potential for 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ when 
+\begin_inset Formula $r_{1}\rightarrow\infty$
+\end_inset
+
+, so the second one is better.
+\end_layout
+
+\begin_layout Section*
+2D harmonic oscillator
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2}\right)= & \frac{1}{2}\left(k_{1}\left(r_{1}-r_{1,e}\right)^{2}+k_{2}\left(r_{2}-r_{2,e}\right)^{2}\right)
+\end{align}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -306,7 +609,7 @@ A potential issue with the secnod formulation is that for large
 \lang british
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-bibfiles "/home/nike/pCloud Sync/library,../../Papers/library,C:/Users/Nike/Desktop/Dropbox/NSD/Papers/library,C:/Users/Richard/Documents/Bibtex/library,apssamp"
+bibfiles "/home/nike/pCloud Sync/library,apssamp"
 options "apsrev4-1"
 
 \end_inset
