@@ -438,7 +438,7 @@ We first try the second way (using a summation) because that turned out
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2}\right) & =\left(A_{1}e^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}-B_{1}e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}+A_{2}e^{-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-B_{2}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}+\mathfrak{D}_{e}\right)-u\left(r_{1},r_{2}\right)\\
+V\left(r_{1},r_{2}\right) & =\left(A_{1}e^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}-B_{1}e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}+A_{2}e^{-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-B_{2}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}+\mathfrak{D}_{e}\right)-u\left(r_{1},r_{2}\right)\label{eq:delr2}\\
 A_{i} & =\mathfrak{D}_{e,i}-u\left(r_{i,e}\right)-\left(\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,i}}\right)/\beta_{i,0}\\
 B_{i} & =2\mathfrak{D}_{e,i}-2u\left(r_{i,e}\right)-\left(\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,i}}\right)/\beta_{i,0}\\
 \left.V\left(r_{1},r_{2}\right)\right|_{u\left(r_{1},r_{2}\right)=0} & =\left(\mathfrak{D}_{e,1}e^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}-2\mathfrak{D}_{e,1}e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}+\mathfrak{D}_{e,2}e^{-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-2\mathfrak{D}_{e,2}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}\right)\\
@@ -476,6 +476,28 @@ where
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Is that true we must have
+\begin_inset Formula $\mathfrak{D}_{e}=\mathfrak{D}_{e,1}=\mathfrak{D}_{e,2}$
+\end_inset
+
+? Consider we have two totally isolated molecules like two CO, then it should
+ be 
+\begin_inset Formula $\mathfrak{D}_{e}=\mathfrak{D}_{e,1}+\mathfrak{D}_{e,2}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 We can therefore try the first way (making each function of 
 \begin_inset Formula $r$
 \end_inset
@@ -490,7 +512,7 @@ We can therefore try the first way (making each function of
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2}\right) & =\left(Ae^{-2\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}-Be^{-\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}\right)-u\left(r_{1},r_{2}\right)\\
+V\left(r_{1},r_{2}\right) & =\left(Ae^{-2\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}-Be^{-\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}\right)-u\left(r_{1},r_{2}\right)\label{eq:delr1}\\
 A & =\mathfrak{D}_{e}-u\left(r_{e,1},r_{e,2}\right)-\left(\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,1}}+\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,2}}\right)/\beta_{0}\\
 B & =2\mathfrak{D}_{e}-2u\left(r_{e,1},r_{e,2}\right)-\left(\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,1}}+\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,2}}\right)/\beta_{0}\\
 \left.V\left(r_{1},r_{2}\right)\right|_{u\left(r_{1},r_{2}\right)=0} & =\left(\mathfrak{D}_{e}e^{-2\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}-2\mathfrak{D}_{e}e^{-\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}\right)\\
@@ -531,11 +553,11 @@ A better way might be the following:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2}\right) & =\left(Ae^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-Be^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}\right)-u\left(r_{1},r_{2}\right)\\
- & =\left(Ae^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}e^{-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-Be^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}\right)-u\left(r_{1},r_{2}\right)\\
+V\left(r_{1},r_{2}\right) & =\left(Ae^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-Be^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}+\mathfrak{D}_{e}\right)-u\left(r_{1},r_{2}\right)\\
+ & =\left(Ae^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}e^{-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-Be^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}+\mathfrak{D}_{e}\right)-u\left(r_{1},r_{2}\right)\\
 A & =\mathfrak{D}_{e}-u\left(r_{e,1},r_{e,2}\right)-\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,1}}/\beta_{1,0}-\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,2}}/\beta_{2,0}\\
 B & =2\mathfrak{D}_{e}-2u\left(r_{e,1},r_{e,2}\right)-\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,1}}/\beta_{1,0}-\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,2}}/\beta_{2,0}\\
-\left.V\left(r_{1},r_{2}\right)\right|_{u\left(r_{1},r_{2}\right)=0} & =\left(\mathfrak{D}_{e}e^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}e^{-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-2\mathfrak{D}_{e}e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}\right)\\
+\left.V\left(r_{1},r_{2}\right)\right|_{u\left(r_{1},r_{2}\right)=0} & =\left(\mathfrak{D}_{e}e^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}e^{-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-2\mathfrak{D}_{e}e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}+\mathfrak{D}_{e}\right)\\
  & =\mathfrak{D}_{e}\left(1-e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}\right)^{2}\label{eq:ultimate}
 \end{align}
 
@@ -558,6 +580,51 @@ reference "eq:ultimate"
 \end_inset
 
  seems to be the best choice.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The problem here is that if 
+\begin_inset Formula $r_{1}\rightarrow\infty$
+\end_inset
+
+, then the whole function goes (exponentially) to 
+\begin_inset Formula $\mathfrak{D}_{e}$
+\end_inset
+
+ even though there might still be some 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ dependence.
+ Yes, the same problem with 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:delr1"
+
+\end_inset
+
+.
+ I think maybe we should start with 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:delr2"
+
+\end_inset
+
+ although it has the 
+\begin_inset Formula $\mathfrak{D}_{e}$
+\end_inset
+
+ problem.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
