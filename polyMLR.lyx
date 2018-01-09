@@ -762,17 +762,17 @@ V\left(\infty,\infty\right) & =D_{e}\left(\infty\right)+D{}_{e}\left(\infty\righ
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2}\right) & =D_{e}\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}\right)^{2}+D_{e}\left(1-e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2}+D_{12}\left(r_{1},r_{2}\right)\\
-D_{12}\left(r_{1},r_{2}\right) & =\left(W-D_{e}\right)\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2}\\
-D_{12}\left(\infty,r_{e}\right) & =\left(W-D_{e}\right)\\
-D_{12}\left(r_{e},\infty\right) & =\left(W-D_{e}\right)\\
+V\left(r_{1},r_{2}\right) & =D_{e}\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}\right)^{2}+D_{e}\left(1-e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2}+V_{12}\left(r_{1},r_{2}\right)\label{eq:symmetric2dmorse}\\
+V_{12}\left(r_{1},r_{2}\right) & =\left(W-D_{e}\right)\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2}\label{eq:V12}\\
+V_{12}\left(\infty,r_{e}\right) & =\left(W-D_{e}\right)\\
+V_{12}\left(r_{e},\infty\right) & =\left(W-D_{e}\right)\\
 V\left(r_{e},r_{e}\right) & =D_{12}\left(r_{e},r_{e}\right)=0\\
 V\left(\infty,r_{e}\right) & =D_{e}+D_{12}\left(\infty,r_{e}\right)\\
  & =D_{e}+\left(V-D_{e}\right)=W\\
 V\left(r_{e},\infty\right) & =D_{12}\left(r_{e},\infty\right)+D_{e}\\
  & =\left(V-D_{e}\right)+D_{e}=W\\
 V\left(\infty,\infty\right) & =2D_{e}+D_{12}\left(\infty,\infty\right)\\
-D_{12}\left(\infty,\infty\right) & =-D_{e}+W\\
+V_{12}\left(\infty,\infty\right) & =-D_{e}+W\\
  & =V\left(r_{1}=\infty,r_{2}=r_{e}\left(\infty\right)\right)+D_{e,{\rm diatomic}}\\
  & =W+D_{e}\\
  & =D_{e}+W\\
@@ -782,6 +782,99 @@ D_{12}\left(\infty,\infty\right) & =-D_{e}+W\\
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+The problem here is that when 
+\begin_inset Formula $r_{2}\rightarrow\infty$
+\end_inset
+
+ we should recover the diatomic potential in 
+\begin_inset Formula $r_{1}$
+\end_inset
+
+, but instead we get that plus 
+\begin_inset Formula $\left(W-D_{e}\right)$
+\end_inset
+
+ which has the right 
+\begin_inset Formula $r$
+\end_inset
+
+-dependence but is badly shfited.
+ We need to add a function which is 0 when 
+\begin_inset Formula $r_{1}\lll\infty$
+\end_inset
+
+ and and equal to 
+\begin_inset Formula $\left(D_{e}-W\right)$
+\end_inset
+
+ when 
+\begin_inset Formula $r_{2}\rightarrow\infty$
+\end_inset
+
+.
+ This should be easy.
+\end_layout
+
+\begin_layout Standard
+The first two terms in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:symmetric2dmorse"
+
+\end_inset
+
+ are just the diatomic potentials, which are assumed to be known accurately.
+ So they can be absorbed into the left side:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2}\right)-D_{e}\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}\right)^{2}+D_{e}\left(1-e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2} & =D_{12}\left(r_{1},r_{2}\right)\\
+\tilde{V}\left(r_{1},r_{2}\right) & =D_{12}\left(r_{1},r_{2}\right)
+\end{align}
+
+\end_inset
+
+We therefore just have to fit this 
+\begin_inset Quotes eld
+\end_inset
+
+cross-potential
+\begin_inset Quotes erd
+\end_inset
+
+ to the 2D data, and Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:V12"
+
+\end_inset
+
+ is not the only model that can be used here.
+\end_layout
+
+\begin_layout Standard
+For example we could also try:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Chingudeul mallo mallo malloneun Imi neon
 \end_layout
 
 \begin_layout Section*
