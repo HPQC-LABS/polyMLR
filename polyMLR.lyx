@@ -87,6 +87,7 @@ Nike Dattani
 \end_layout
 
 \begin_layout Author Email
+
 dattani.nike@fukui.kyoto.ac.jp
 \end_layout
 
@@ -111,6 +112,7 @@ Yu Zhai
 \end_layout
 
 \begin_layout Author Email
+
 yuzhai@mail.huiligroup.org
 \end_layout
 
@@ -438,15 +440,56 @@ We first try the second way (using a summation) because that turned out
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2}\right) & =\left(A_{1}e^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}-B_{1}e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}+A_{2}e^{-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-B_{2}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}+\mathfrak{D}_{e}\right)-u\left(r_{1},r_{2}\right)\label{eq:delr2}\\
+V\left(r_{1},r_{2}\right) & =\left(A_{1}e^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}-B_{1}e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}+A_{2}e^{-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-B_{2}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}+\mathfrak{D}_{e,1}+\mathfrak{D}_{e,2}\right)-u\left(r_{1},r_{2}\right)\label{eq:delr2}\\
 A_{i} & =\mathfrak{D}_{e,i}-u\left(r_{i,e}\right)-\left(\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,i}}\right)/\beta_{i,0}\\
 B_{i} & =2\mathfrak{D}_{e,i}-2u\left(r_{i,e}\right)-\left(\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,i}}\right)/\beta_{i,0}\\
-\left.V\left(r_{1},r_{2}\right)\right|_{u\left(r_{1},r_{2}\right)=0} & =\left(\mathfrak{D}_{e,1}e^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}-2\mathfrak{D}_{e,1}e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}+\mathfrak{D}_{e,2}e^{-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-2\mathfrak{D}_{e,2}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}\right)\\
- & =\mathfrak{D}_{e,1}\left(1-e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}\right)^{2}+\mathfrak{D}_{e,2}\left(1-e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}\right)^{2},
+\left.V\left(r_{1},r_{2}\right)\right|_{u\left(r_{1},r_{2}\right)=0} & =\left(\mathfrak{D}_{e,1}e^{-2\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}-2\mathfrak{D}_{e,1}e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}+\mathfrak{D}_{e,2}e^{-2\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}-2\mathfrak{D}_{e,2}e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}+\mathfrak{D}_{e,1}+\mathfrak{D}_{e,2}\right)\\
+ & =\mathfrak{D}_{e,1}\left(1-e^{-\beta_{1}\left(r_{1}\right)\left(r_{1}-r_{1,e}\right)}\right)^{2}+\mathfrak{D}_{e,2}\left(1-e^{-\beta_{2}\left(r_{2}\right)\left(r_{2}-r_{2,e}\right)}\right)^{2}\\
+\left.V\left(r_{1,e},r_{2,e}\right)\right|_{u\left(r_{1},r_{2}\right)=0} & =0\\
+\left.V\left(\infty,\infty\right)\right|_{u\left(r_{1},r_{2}\right)=0} & =\mathfrak{D}_{e,1}+\mathfrak{D}_{e,2}
 \end{align}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+This is a problem because, the atomization energy should be the energy it
+ takes to separate atom 1 from the central atom, plus the energy it take
+ to separate the resulting diatomic molecule.
+ Therefore, let's try making 
+\begin_inset Formula $\mathfrak{D}_{e,1}\left(r_{2}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathfrak{D}_{e,2}\left(r_{1}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Now we have:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\left.V\left(\infty,\infty\right)\right|_{u\left(r_{1},r_{2}\right)=0} & =\mathfrak{D}_{e,1}\left(\infty\right)+\mathfrak{D}_{e,2}\left(\infty\right)\\
+ & =
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 where 
 \begin_inset Formula $\mathfrak{D}_{e,i}$
 \end_inset
@@ -475,7 +518,9 @@ where
 .
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
 \begin_inset Note Note
 status open
 
@@ -512,10 +557,10 @@ We can therefore try the first way (making each function of
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2}\right) & =\left(Ae^{-2\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}-Be^{-\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}\right)-u\left(r_{1},r_{2}\right)\label{eq:delr1}\\
+V\left(r_{1},r_{2}\right) & =\left(Ae^{-2\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}-Be^{-\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}+\mathfrak{D}_{e}\right)-u\left(r_{1},r_{2}\right)\label{eq:delr1}\\
 A & =\mathfrak{D}_{e}-u\left(r_{e,1},r_{e,2}\right)-\left(\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,1}}+\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,2}}\right)/\beta_{0}\\
 B & =2\mathfrak{D}_{e}-2u\left(r_{e,1},r_{e,2}\right)-\left(\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,1}}+\frac{\partial u\left(r_{e,1},r_{e,2}\right)}{\partial r_{e,2}}\right)/\beta_{0}\\
-\left.V\left(r_{1},r_{2}\right)\right|_{u\left(r_{1},r_{2}\right)=0} & =\left(\mathfrak{D}_{e}e^{-2\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}-2\mathfrak{D}_{e}e^{-\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}\right)\\
+\left.V\left(r_{1},r_{2}\right)\right|_{u\left(r_{1},r_{2}\right)=0} & =\left(\mathfrak{D}_{e}e^{-2\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}-2\mathfrak{D}_{e}e^{-\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}+\mathfrak{D}_{e}\right)\\
  & =\mathfrak{D}_{e}\left(1-e^{-\beta\left(r_{1},r_{2}\right)\left(\left(r_{1}-r_{1,e}\right)+\left(r_{2}-r_{2,e}\right)\right)}\right)^{2}.
 \end{align}
 
@@ -567,19 +612,12 @@ B & =2\mathfrak{D}_{e}-2u\left(r_{e,1},r_{e,2}\right)-\frac{\partial u\left(r_{e
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-\size large
-\color red
-Of all candidates, Eq.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:ultimate"
-
+The problem is that when 
+\begin_inset Formula $r_{2}=\infty$
 \end_inset
 
- seems to be the best choice.
+, we should have just a diatomic molecule with the diatomic De, but instead
+ we have the TOTAL De, which is bigger than the diatomic De.
 \end_layout
 
 \begin_layout Standard
@@ -634,8 +672,7 @@ reference "eq:delr2"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2}\right)= & \mathfrak{D}_{e}\left(1-e^{-\beta_{1}\left(r_{1}-r_{1,e}\right)}\right)^{2}\left(1-e^{-\beta_{2}\left(r_{2}-r_{2,e}\right)}\right)^{2}\\
-V\left(r_{1},r_{2}\right)= & \mathfrak{D}_{e}\left(1-e^{-\beta_{1}\left(r_{1}-r_{1,e}\right)}e^{-\beta_{2}\left(r_{2}-r_{2,e}\right)}\right)^{2}
+V\left(r_{1},r_{2}\right)= & \mathfrak{D}_{e}\left(1-e^{-\beta_{1}\left(r_{1}-r_{1,e}\right)}\right)^{2}\left(1-e^{-\beta_{2}\left(r_{2}-r_{2,e}\right)}\right)^{2}
 \end{align}
 
 \end_inset
@@ -644,7 +681,7 @@ V\left(r_{1},r_{2}\right)= & \mathfrak{D}_{e}\left(1-e^{-\beta_{1}\left(r_{1}-r_
 \end_layout
 
 \begin_layout Standard
-The first one only becomes a Morse potential for 
+This only becomes a Morse potential for 
 \begin_inset Formula $r_{2}$
 \end_inset
 
@@ -652,7 +689,218 @@ The first one only becomes a Morse potential for
 \begin_inset Formula $r_{1}\rightarrow\infty$
 \end_inset
 
-, so the second one is better.
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V\left(r_{1},r_{2}\right)=\mathfrak{D}_{e}\left(1-e^{-\beta_{1}\left(r_{1}-r_{1,e}\right)}e^{-\beta_{2}\left(r_{2}-r_{2,e}\right)}\right)^{2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $r_{2}\rightarrow\infty$
+\end_inset
+
+, 
+\begin_inset Formula $V\rightarrow D_{e}$
+\end_inset
+
+ but it should be smaller, because only part of them molecule has dissociated.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e,1}\left(1-e^{-\beta_{1}\left(r_{1}-r_{1,e}\right)}\right)^{2}+\mathfrak{D}_{e,2}\left(1-e^{-\beta_{2}\left(r_{2}-r_{2,e}\right)}\right)^{2}\mathfrak{+D}_{e,12}\left(1-e^{-\beta_{1}\left(r_{1}-r_{1,e}\right)}e^{-\beta_{2}\left(r_{2}-r_{2,e}\right)}\right)^{2}\\
+V\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e,1}\left(1-e^{-\beta_{1}\left(r_{1}-r_{1,e}\right)}\right)^{2}+\mathfrak{D}_{e,2}\left(1-e^{-\beta_{2}\left(r_{2}-r_{2,e}\right)}\right)^{2}\mathfrak{+D}_{e,12}\left(r_{1},r_{2}\right)\\
+V\left(\infty,\infty\right) & =\mathfrak{D}_{e,1}+\mathfrak{D}_{e,2}\mathfrak{+D}_{e,12}\left(r_{1},r_{2}\right)
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+2D Symmetric Morse potential (ex.
+ BeH
+\begin_inset Formula $_{2}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2}\right) & =D_{e}\left(r_{2}\right)\left(1-e^{-\beta\left(r_{1}-r_{e}\left(r_{2}\right)\right)}\right)+D_{e}\left(r_{1}\right)\left(1-e^{-\beta\left(r_{2}-r_{e}\left(r_{1}\right)\right)}\right)^{2}\\
+r_{e}(R_{e}) & =R_{e}\\
+V\left(R_{e},R_{e}\right) & =0\\
+V\left(\infty,R_{e}\right) & =D_{e}\left(R_{e}\right)\\
+V\left(R_{e},\infty\right) & =D_{e}\left(R_{e}\right)\\
+V\left(\infty,\infty\right) & =D_{e}\left(\infty\right)+D{}_{e}\left(\infty\right)\\
+ & =2D_{e}\left(\infty\right)\\
+\\
+ & =V\left(r_{1}=\infty,r_{2}=r_{e}\left(\infty\right)\right)+\mathfrak{D}_{e,{\rm diatomic}}\\
+ & =V+\mathfrak{D}_{e,{\rm diatomic}}\\
+ & =\mathfrak{D}_{e,{\rm diatomic}}+V\\
+ & =\mathfrak{D}_{e,{\rm diatomic}}+V\left(r_{1}=r_{e}\left(\infty\right),r_{2}=\infty\right)
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2}\right) & =D_{e}\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}\right)^{2}+D_{e}\left(1-e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2}+V_{12}\left(r_{1},r_{2}\right)\label{eq:symmetric2dmorse}\\
+V_{12}\left(r_{1},r_{2}\right) & =\left(W-D_{e}\right)\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2}\label{eq:V12}\\
+V_{12}\left(\infty,r_{e}\right) & =\left(W-D_{e}\right)\\
+V_{12}\left(r_{e},\infty\right) & =\left(W-D_{e}\right)\\
+V\left(r_{e},r_{e}\right) & =D_{12}\left(r_{e},r_{e}\right)=0\\
+V\left(\infty,r_{e}\right) & =D_{e}+D_{12}\left(\infty,r_{e}\right)\\
+ & =D_{e}+\left(V-D_{e}\right)=W\\
+V\left(r_{e},\infty\right) & =D_{12}\left(r_{e},\infty\right)+D_{e}\\
+ & =\left(V-D_{e}\right)+D_{e}=W\\
+V\left(\infty,\infty\right) & =2D_{e}+D_{12}\left(\infty,\infty\right)\\
+V_{12}\left(\infty,\infty\right) & =-D_{e}+W\\
+ & =V\left(r_{1}=\infty,r_{2}=r_{e}\left(\infty\right)\right)+D_{e,{\rm diatomic}}\\
+ & =W+D_{e}\\
+ & =D_{e}+W\\
+ & =D_{e,{\rm diatomic}}+V\left(r_{1}=r_{e}\left(\infty\right),r_{2}=\infty\right)
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The problem here is that when 
+\begin_inset Formula $r_{2}\rightarrow\infty$
+\end_inset
+
+ we should recover the diatomic potential in 
+\begin_inset Formula $r_{1}$
+\end_inset
+
+, but instead we get that plus 
+\begin_inset Formula $\left(W-D_{e}\right)$
+\end_inset
+
+ which has the right 
+\begin_inset Formula $r$
+\end_inset
+
+-dependence but is badly shfited.
+ We need to add a function which is 0 when 
+\begin_inset Formula $r_{1}\lll\infty$
+\end_inset
+
+ and and equal to 
+\begin_inset Formula $\left(D_{e}-W\right)$
+\end_inset
+
+ when 
+\begin_inset Formula $r_{2}\rightarrow\infty$
+\end_inset
+
+.
+ This should be easy.
+\end_layout
+
+\begin_layout Standard
+The first two terms in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:symmetric2dmorse"
+
+\end_inset
+
+ are just the diatomic potentials, which are assumed to be known accurately.
+ So they can be absorbed into the left side:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2}\right)-D_{e}\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}\right)^{2}+D_{e}\left(1-e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2} & =V_{12}\left(r_{1},r_{2}\right)\\
+\tilde{V}\left(r_{1},r_{2}\right) & =V_{12}\left(r_{1},r_{2}\right)
+\end{align}
+
+\end_inset
+
+We therefore just have to fit this 
+\begin_inset Quotes eld
+\end_inset
+
+cross-potential
+\begin_inset Quotes erd
+\end_inset
+
+ to the 2D data, and Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:V12"
+
+\end_inset
+
+ is not the only model that can be used here.
+\end_layout
+
+\begin_layout Standard
+For example we could also try:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V_{12}\left(r_{1},r_{2}\right) & =\left(W-D_{e}\right)\left(2-e^{-\beta\left(r_{1}-r_{e}\right)}-e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2},
+\end{align}
+
+\end_inset
+
+but when 
+\begin_inset Formula $r_{2}\rightarrow\infty$
+\end_inset
+
+ we still have functional dependence on 
+\begin_inset Formula $r_{1}$
+\end_inset
+
+, which we do not want.
+ Also we could try:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{12}\left(r_{1},r_{2}\right)=\left(W-D_{e}\right)\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}\right)^{2}\left(1-e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2},
+\end{equation}
+
+\end_inset
+
+but this has the same problem.
+ So far Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:V12"
+
+\end_inset
+
+ is the best candidate.
 \end_layout
 
 \begin_layout Section*
