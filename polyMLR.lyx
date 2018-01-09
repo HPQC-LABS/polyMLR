@@ -834,8 +834,8 @@ reference "eq:symmetric2dmorse"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2}\right)-D_{e}\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}\right)^{2}+D_{e}\left(1-e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2} & =D_{12}\left(r_{1},r_{2}\right)\\
-\tilde{V}\left(r_{1},r_{2}\right) & =D_{12}\left(r_{1},r_{2}\right)
+V\left(r_{1},r_{2}\right)-D_{e}\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}\right)^{2}+D_{e}\left(1-e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2} & =V_{12}\left(r_{1},r_{2}\right)\\
+\tilde{V}\left(r_{1},r_{2}\right) & =V_{12}\left(r_{1},r_{2}\right)
 \end{align}
 
 \end_inset
@@ -865,16 +865,42 @@ For example we could also try:
 
 \begin_layout Standard
 \begin_inset Formula 
+\begin{align}
+V_{12}\left(r_{1},r_{2}\right) & =\left(W-D_{e}\right)\left(2-e^{-\beta\left(r_{1}-r_{e}\right)}-e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2},
+\end{align}
+
+\end_inset
+
+but when 
+\begin_inset Formula $r_{2}\rightarrow\infty$
+\end_inset
+
+ we still have functional dependence on 
+\begin_inset Formula $r_{1}$
+\end_inset
+
+, which we do not want.
+ Also we could try:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
 \begin{equation}
+V_{12}\left(r_{1},r_{2}\right)=\left(W-D_{e}\right)\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}\right)^{2}\left(1-e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2},
 \end{equation}
 
 \end_inset
 
+but this has the same problem.
+ So far Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:V12"
 
-\end_layout
+\end_inset
 
-\begin_layout Standard
-Chingudeul mallo mallo malloneun Imi neon
+ is the best candidate.
 \end_layout
 
 \begin_layout Section*
