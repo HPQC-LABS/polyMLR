@@ -123,6 +123,12 @@ Jilin University, Institute of Theoretical Chemistry, Changchun, Jilin,
  China.
 \end_layout
 
+\begin_layout Date
+
+\lang british
+01/09/2018
+\end_layout
+
 \begin_layout Abstract
 We introduce an analytic potential energy function for polyatomic molecules
  which can be controlled to have the theoretically correct long-range and
@@ -738,20 +744,11 @@ V\left(\infty,\infty\right) & =\mathfrak{D}_{e,1}+\mathfrak{D}_{e,2}\mathfrak{+D
 \end_layout
 
 \begin_layout Standard
+Recall the 1D Morse potential:
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2}\right) & =D_{e}\left(r_{2}\right)\left(1-e^{-\beta\left(r_{1}-r_{e}\left(r_{2}\right)\right)}\right)+D_{e}\left(r_{1}\right)\left(1-e^{-\beta\left(r_{2}-r_{e}\left(r_{1}\right)\right)}\right)^{2}\\
-r_{e}(R_{e}) & =R_{e}\\
-V\left(R_{e},R_{e}\right) & =0\\
-V\left(\infty,R_{e}\right) & =D_{e}\left(R_{e}\right)\\
-V\left(R_{e},\infty\right) & =D_{e}\left(R_{e}\right)\\
-V\left(\infty,\infty\right) & =D_{e}\left(\infty\right)+D{}_{e}\left(\infty\right)\\
- & =2D_{e}\left(\infty\right)\\
-\\
- & =V\left(r_{1}=\infty,r_{2}=r_{e}\left(\infty\right)\right)+\mathfrak{D}_{e,{\rm diatomic}}\\
- & =V+\mathfrak{D}_{e,{\rm diatomic}}\\
- & =\mathfrak{D}_{e,{\rm diatomic}}+V\\
- & =\mathfrak{D}_{e,{\rm diatomic}}+V\left(r_{1}=r_{e}\left(\infty\right),r_{2}=\infty\right)
+V(r) & =D_{e}\left(1-e^{-\beta\left(r-r_{e}\right)}\right)^{2}\\
+\lim_{r\to\infty}V\left(r\right) & =D_{e}
 \end{align}
 
 \end_inset
@@ -760,6 +757,81 @@ V\left(\infty,\infty\right) & =D_{e}\left(\infty\right)+D{}_{e}\left(\infty\righ
 \end_layout
 
 \begin_layout Standard
+Instead, we want a 'right' long-range behaviour.
+ Let's try add a constant
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V'(r) & =D_{e}\left(1-e^{-\beta\left(r-r_{e}\right)}\right)^{2}-D_{e}\\
+\lim_{r\to\infty}V'\left(r\right) & =0
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+That is good.
+ But not the situation in 2D problem.
+ The long-range behaviour should be controled by the diatomic potential.
+ We difine the diatomic potential a
+\begin_inset Formula 
+\begin{align}
+V_{\infty}(r) & =D_{\infty}\left(1-e^{-\beta_{\infty}\left(r-r_{e,\infty}\right)}\right)^{2}-D_{\infty}\\
+\lim_{r\to\infty}V_{\infty}\left(r\right) & =0
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with all signs with subscript 
+\begin_inset Formula $\infty$
+\end_inset
+
+ defined as the values for the 1D slice with one of the 
+\begin_inset Formula $r_{i}(i=1\text{or}2)$
+\end_inset
+
+ goes to infinity.
+ Considering the fact that no matter in which kind of 1D slice the energy
+ for a single point should be the same, we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2}\right) & =\left\{ D_{e}\left(r_{2}\right)\left(1-e^{-\beta\left(r_{1}-r_{e}\left(r_{2}\right)\right)}\right)^{2}+D_{e}\left(r_{1}\right)\left(1-e^{-\beta\left(r_{2}-r_{e}\left(r_{1}\right)\right)}\right)^{2}-D_{e}(r_{2})-D_{e}(r_{1})+V_{\infty}(r_{1})+V_{\infty}(r_{2})\right\} /2\\
+r_{e}(R_{e}) & =R_{e}\quad\textrm{[The bond length at global minimum]}\\
+V\left(R_{e},R_{e}\right) & =-D_{e}(R_{e})+V_{\infty}(R_{e})\\
+V\left(\infty,R_{e}\right) & =\left\{ D_{e}(R_{e})+D_{e}\left(\infty\right)\left(1-e^{-\beta\left(R_{e}-r_{e}\left(\infty\right)\right)}\right)^{2}-D_{e}(R_{e})-D_{e}(\infty)+V_{\infty}(\infty)+V_{\infty}(R_{e})\right\} /2\\
+ & =\left\{ D_{e}(R_{e})+D_{\infty}\left(1-e^{-\beta\left(R_{e}-r_{\infty}\right)}\right)^{2}-D_{e}(R_{e})-D_{\infty}+V_{\infty}(\infty)+V_{\infty}(R_{e})\right\} /2\\
+ & =\left\{ D_{\infty}\left(1-e^{-\beta\left(R_{e}-r_{\infty}\right)}\right)^{2}-D_{\infty}+V_{\infty}(R_{e})\right\} /2\\
+V\left(R_{e},\infty\right) & =\left\{ D_{\infty}\left(1-e^{-\beta\left(R_{e}-r_{\infty}\right)}\right)^{2}-D_{\infty}+V_{\infty}(R_{e})\right\} /2\quad\text{[They are just something meaningless]}\\
+V\left(\infty,\infty\right) & =\left\{ D_{e}\left(\infty\right)+D_{e}\left(\infty\right)-D_{e}(\infty)-D_{e}(\infty)+V_{\infty}(\infty)+V_{\infty}(\infty)\right\} /2\\
+ & =0\\
+V(r_{e}(\infty),\infty) & =V(r_{\infty},\infty)\\
+ & =\left\{ D_{e}\left(\infty\right)\left(1-e^{-\beta\left(r_{\infty}-r_{e}\left(\infty\right)\right)}\right)^{2}+D_{e}\left(r_{\infty}\right)\left(1-e^{-\beta\left(\infty-r_{e}\left(r_{\infty}\right)\right)}\right)^{2}-D_{e}(\infty)-D_{e}(r_{\infty})+V_{\infty}(r_{\infty})+V_{\infty}(\infty)\right\} /2\\
+ & =\left\{ 0+D_{e}\left(r_{\infty}\right)-D_{\infty}-D_{e}(r_{\infty})-D_{\infty}+0\right\} /2\\
+ & =-D_{\infty}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It seems that everything works perfectly.
+\end_layout
+
+\begin_layout Standard
+An alternative solution can be
 \begin_inset Formula 
 \begin{align}
 V\left(r_{1},r_{2}\right) & =D_{e}\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}\right)^{2}+D_{e}\left(1-e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2}+V_{12}\left(r_{1},r_{2}\right)\label{eq:symmetric2dmorse}\\
