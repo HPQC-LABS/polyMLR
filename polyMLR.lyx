@@ -87,7 +87,6 @@ Nike Dattani
 \end_layout
 
 \begin_layout Author Email
-
 dattani.nike@fukui.kyoto.ac.jp
 \end_layout
 
@@ -112,7 +111,6 @@ Yu Zhai
 \end_layout
 
 \begin_layout Author Email
-
 yuzhai@mail.huiligroup.org
 \end_layout
 
@@ -818,22 +816,22 @@ Considering the fact that no matter which kind of 1D slice, the energy for
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2}\right) & =\left(D_{e}\left(r_{2}\right)\left(1-e^{-\beta\left(r_{1}-r_{e}\left(r_{2}\right)\right)}\right)^{2}+D_{e}\left(r_{1}\right)\left(1-e^{-\beta\left(r_{2}-r_{e}\left(r_{1}\right)\right)}\right)^{2}-D_{e}(r_{2})-D_{e}(r_{1})+V_{\infty}(r_{1})+V_{\infty}(r_{2})\right)/2\\
+V\left(r_{1},r_{2}\right) & =\left(D_{e}\left(r_{2}\right)\left(1-e^{-\beta\left(r_{1}-r_{e}\left(r_{2}\right)\right)}\right)^{2}+D_{e}\left(r_{1}\right)\left(1-e^{-\beta\left(r_{2}-r_{e}\left(r_{1}\right)\right)}\right)^{2}-D_{e}(r_{2})-D_{e}(r_{1})+V_{{\rm diatomic}}(r_{1})+V_{{\rm diatomic}}(r_{2})\right)/2\\
 D_{e}(r_{2}) & =V(\infty,r_{2})-\min_{r_{1}}\left(V(r_{1},r_{2})\right)\\
 D_{e}(r_{2}) & =V_{{\rm diatomic}}(r_{2})-V_{{\rm {\rm min_{r_{1}}}}}(r_{2})\\
 r_{e}(R_{e}) & =R_{e}\quad\textrm{[The bond length at global minimum]}\\
 V\left(R_{e},R_{e}\right) & =-D_{e}(R_{e})+V_{\infty}(R_{e})\\
  & =-D_{e}(R_{e})+W\\
-V(\infty,r_{2}) & =\left(D_{e}\left(r_{2}\right)+D_{e}\left(r_{1}\right)\left(1-e^{-\beta\left(r_{2}-r_{e}\left(r_{1}\right)\right)}\right)^{2}-D_{e}\left(r_{2}\right)-D_{e}(\infty)+V_{\infty}(\infty)+V_{\infty}(r_{2})\right)/2\\
- & =\left(D_{e}\left(r_{2}\right)+D_{e}\left(r_{1}\right)\left(1-e^{-\beta\left(r_{2}-r_{e}\left(r_{1}\right)\right)}\right)^{2}-D_{e}\left(r_{2}\right)-D_{e,{\rm diatomic}}+V_{\infty}(\infty)+V_{\infty}(r_{2})\right)/2\\
-V\left(\infty,R_{e}\right) & =\left\{ D_{e}(R_{e})+D_{e}\left(\infty\right)\left(1-e^{-\beta\left(R_{e}-r_{e}\left(\infty\right)\right)}\right)^{2}-D_{e}(R_{e})-D_{e}(\infty)+V_{\infty}(\infty)+V_{\infty}(R_{e})\right\} /2\\
- & =\left\{ D_{e}(R_{e})+D_{\infty}\left(1-e^{-\beta\left(R_{e}-r_{\infty}\right)}\right)^{2}-D_{e}(R_{e})-D_{\infty}+V_{\infty}(\infty)+V_{\infty}(R_{e})\right\} /2\\
- & =\left\{ D_{\infty}\left(1-e^{-\beta\left(R_{e}-r_{\infty}\right)}\right)^{2}-D_{\infty}+V_{\infty}(R_{e})\right\} /2\\
-V\left(R_{e},\infty\right) & =\left\{ D_{\infty}\left(1-e^{-\beta\left(R_{e}-r_{\infty}\right)}\right)^{2}-D_{\infty}+V_{\infty}(R_{e})\right\} /2\quad\text{[They are just something meaningless, because global \ensuremath{R_{e}} is different from diatomic Re]}\\
-V\left(\infty,\infty\right) & =\left\{ D_{e}\left(\infty\right)+D_{e}\left(\infty\right)-D_{e}(\infty)-D_{e}(\infty)+V_{\infty}(\infty)+V_{\infty}(\infty)\right\} /2\\
+V(\infty,r_{2}) & =\left(D_{e}\left(r_{2}\right)+D_{e}\left(r_{1}\right)\left(1-e^{-\beta\left(r_{2}-r_{e}\left(r_{1}\right)\right)}\right)^{2}-D_{e}\left(r_{2}\right)-D_{e}(\infty)+V_{{\rm diatomic}}(\infty)+V_{{\rm diatomic}}(r_{2})\right)/2\\
+ & =\left(D_{e}\left(r_{2}\right)+D_{e}\left(r_{1}\right)\left(1-e^{-\beta\left(r_{2}-r_{e}\left(r_{1}\right)\right)}\right)^{2}-D_{e}\left(r_{2}\right)-D_{e,{\rm diatomic}}+V_{{\rm diatomic}}(\infty)+V_{{\rm diatomic}}(r_{2})\right)/2\\
+V\left(\infty,R_{e}\right) & =\left\{ D_{e}(R_{e})+D_{e}\left(\infty\right)\left(1-e^{-\beta\left(R_{e}-r_{e}\left(\infty\right)\right)}\right)^{2}-D_{e}(R_{e})-D_{e}(\infty)+V_{{\rm diatomic}}(\infty)+V_{{\rm diatomic}}(R_{e})\right\} /2\\
+ & =\left\{ D_{e}(R_{e})+D_{\infty}\left(1-e^{-\beta\left(R_{e}-r_{\infty}\right)}\right)^{2}-D_{e}(R_{e})-D_{\infty}+V_{{\rm diatomic}}(\infty)+V_{{\rm diatomic}}(R_{e})\right\} /2\\
+ & =\left\{ D_{\infty}\left(1-e^{-\beta\left(R_{e}-r_{\infty}\right)}\right)^{2}-D_{\infty}+V_{{\rm diatomic}}(R_{e})\right\} /2\\
+V\left(R_{e},\infty\right) & =\left\{ D_{\infty}\left(1-e^{-\beta\left(R_{e}-r_{\infty}\right)}\right)^{2}-D_{\infty}+V_{{\rm diatomic}}(R_{e})\right\} /2\quad\text{[They are just something meaningless, because global \ensuremath{R_{e}} is different from diatomic Re]}\\
+V\left(\infty,\infty\right) & =\left\{ D_{e}\left(\infty\right)+D_{e}\left(\infty\right)-D_{e}(\infty)-D_{e}(\infty)+V_{{\rm diatomic}}(\infty)+V_{{\rm diatomic}}(\infty)\right\} /2\\
  & =0\\
 V(r_{e}(\infty),\infty) & =V(r_{\infty},\infty)\\
- & =\left\{ D_{e}\left(\infty\right)\left(1-e^{-\beta\left(r_{\infty}-r_{e}\left(\infty\right)\right)}\right)^{2}+D_{e}\left(r_{\infty}\right)\left(1-e^{-\beta\left(\infty-r_{e}\left(r_{\infty}\right)\right)}\right)^{2}-D_{e}(\infty)-D_{e}(r_{\infty})+V_{\infty}(r_{\infty})+V_{\infty}(\infty)\right\} /2\\
+ & =\left\{ D_{e}\left(\infty\right)\left(1-e^{-\beta\left(r_{\infty}-r_{e}\left(\infty\right)\right)}\right)^{2}+D_{e}\left(r_{\infty}\right)\left(1-e^{-\beta\left(\infty-r_{e}\left(r_{\infty}\right)\right)}\right)^{2}-D_{e}(\infty)-D_{e}(r_{\infty})+V_{{\rm diatomic}}(r_{\infty})+V_{{\rm diatomic}}(\infty)\right\} /2\\
  & =\left\{ 0+D_{e}\left(r_{\infty}\right)-D_{\infty}-D_{e}(r_{\infty})-D_{\infty}+0\right\} /2\\
  & =-D_{\infty}
 \end{align}
