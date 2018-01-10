@@ -850,17 +850,19 @@ An alternative solution can be
 \begin_inset Formula 
 \begin{align}
 V_{\text{BeH}_{2}}\left(r_{1},r_{2}\right) & =V_{\text{BeH}}(r_{1})+V_{\text{BeH}}(r_{2})+\bar{V}_{{\rm BeH}_{2}}(r_{1},r_{2})\label{eq:symmetric2dmorse}\\
- & =D_{e}\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}\right)^{2}+D_{e}\left(1-e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2}+\bar{V}_{{\rm BeH}_{2}}\left(r_{1},r_{2}\right)\\
-\bar{V}_{{\rm BeH}_{2}}\left(r_{1},r_{2}\right) & =\left(W-D_{e}\right)\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2}\label{eq:V12}\\
-\bar{V}_{{\rm BeH}_{2}}\left(\infty,r_{e}\right) & =\left(W-D_{e}\right)\\
-\bar{V}_{{\rm BeH}_{2}}\left(r_{e},\infty\right) & =\left(W-D_{e}\right)\\
+ & =D_{e,{\rm BeH}}\left(1-e^{-\beta\left(r_{1}-r_{e,{\rm BeH}}\right)}\right)^{2}+D_{e,{\rm BeH}}\left(1-e^{-\beta\left(r_{2}-r_{e,{\rm BeH}}\right)}\right)^{2}+\bar{V}_{{\rm BeH}_{2}}\left(r_{1},r_{2}\right)\\
+\bar{V}_{{\rm BeH}_{2}}\left(r_{1},r_{2}\right) & =\left(W-D_{e}\right)\left(1-e^{-\beta\left(r_{1}-r_{e,{\rm BeH_{2}}}\right)}e^{-\beta\left(r_{2}-r_{e,{\rm BeH_{2}}}\right)}\right)^{2}\label{eq:V12}\\
+\bar{V}_{{\rm BeH}_{2}}\left(\infty,r_{e,{\rm BeH}}\right) & =\left(W-D_{e}\right)\\
+\bar{V}_{{\rm BeH}_{2}}\left(r_{e,{\rm BeH}},\infty\right) & =\left(W-D_{e}\right)\\
+\bar{V}_{{\rm BeH}_{2}}\left(\infty,r_{e,{\rm BeH_{2}}}\right) & =\left(W-D_{e}\right)\\
+\bar{V}_{{\rm BeH}_{2}}\left(r_{e,{\rm BeH_{2}}},\infty\right) & =\left(W-D_{e}\right)\\
 \bar{V}_{{\rm BeH}_{2}}\left(\infty,\infty\right) & =\left(W-D_{e}\right)\\
-V\left(r_{e},r_{e}\right) & =\bar{V}_{{\rm BeH}_{2}}\left(r_{e},r_{e}\right)=0\\
-V\left(\infty,r_{e}\right) & =D_{e}+D_{12}\left(\infty,r_{e}\right)\\
+V\left(r_{e},r_{e}\right) & =\bar{V}_{{\rm BeH}_{2}}\left(r_{e},r_{e}\right)=0\text{ [NOT TRUE because Re for BeH and BeH\ensuremath{_{2}} is not the same!]}\\
+V\left(\infty,r_{e}\right) & =D_{e}+\bar{V}_{{\rm BeH}_{2}}\left(\infty,r_{e}\right)\\
  & =D_{e}+\left(V-D_{e}\right)=W\\
-V\left(r_{e},\infty\right) & =D_{12}\left(r_{e},\infty\right)+D_{e}\\
+V\left(r_{e},\infty\right) & =\bar{V}_{{\rm BeH}_{2}}\left(r_{e},\infty\right)+D_{e}\\
  & =\left(V-D_{e}\right)+D_{e}=W\\
-V\left(\infty,\infty\right) & =2D_{e}+V_{12}\left(\infty,\infty\right)\\
+V\left(\infty,\infty\right) & =2D_{e}+\bar{V}_{{\rm BeH}_{2}}\left(\infty,\infty\right)\\
  & =V\left(r_{1}=\infty,r_{2}=r_{e}\left(\infty\right)\right)+D_{e,{\rm diatomic}}\\
  & \equiv W+D_{e}\\
  & =D_{e}+W\\
