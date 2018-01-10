@@ -87,7 +87,6 @@ Nike Dattani
 \end_layout
 
 \begin_layout Author Email
-
 dattani.nike@fukui.kyoto.ac.jp
 \end_layout
 
@@ -112,7 +111,6 @@ Yu Zhai
 \end_layout
 
 \begin_layout Author Email
-
 yuzhai@mail.huiligroup.org
 \end_layout
 
@@ -493,7 +491,7 @@ Now we have:
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 where 
@@ -753,31 +751,23 @@ V(r) & =D_{e}\left(1-e^{-\beta\left(r-r_{e}\right)}\right)^{2}\\
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Instead, we want a 'right' long-range behaviour.
- Let's try add a constant
+Instead, we want the 'right' long-range behaviour.
+ Let's try to add a constant:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-V'(r) & =D_{e}\left(1-e^{-\beta\left(r-r_{e}\right)}\right)^{2}-D_{e}\\
-\lim_{r\to\infty}V'\left(r\right) & =0
+\bar{V}(r) & =D_{e}\left(1-e^{-\beta\left(r-r_{e}\right)}\right)^{2}-D_{e}\\
+\lim_{r\to\infty}\bar{V}\left(r\right) & =0
 \end{align}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 That is good.
- But not the situation in 2D problem.
- The long-range behaviour should be controled by the diatomic potential.
- We difine the diatomic potential a
+ But not the situation in the 2D problem.
+ The long-range behaviour should be controlled by the diatomic potential.
+ We difine the diatomic potential as
 \begin_inset Formula 
 \begin{align}
 V_{\infty}(r) & =D_{\infty}\left(1-e^{-\beta_{\infty}\left(r-r_{e,\infty}\right)}\right)^{2}-D_{\infty}\\
@@ -786,20 +776,16 @@ V_{\infty}(r) & =D_{\infty}\left(1-e^{-\beta_{\infty}\left(r-r_{e,\infty}\right)
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 with all signs with subscript 
 \begin_inset Formula $\infty$
 \end_inset
 
  defined as the values for the 1D slice with one of the 
-\begin_inset Formula $r_{i}(i=1\text{or}2)$
+\begin_inset Formula $r_{i}(i=1\text{ or }2)$
 \end_inset
 
- goes to infinity.
- Considering the fact that no matter in which kind of 1D slice the energy
+ going to infinity.
+ Considering the fact that no matter which kind of 1D slice, the energy
  for a single point should be the same, we have
 \end_layout
 
