@@ -437,6 +437,21 @@ We therefore turn to a potential which doesn't have a quadratic long-range
 \end_layout
 
 \begin_layout Standard
+1D DELR:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V(r)=\left(Ae^{-2\beta\left(r\right)\left(r-r_{e}\right)}-Be^{-\beta\left(r\right)\left(r-r_{e}\right)}+\mathfrak{D}_{e}\right)-u\left(r\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 We first try the second way (using a summation) because that turned out
  to be a lot easier to think about:
 \end_layout
