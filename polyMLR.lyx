@@ -87,7 +87,6 @@ Nike Dattani
 \end_layout
 
 \begin_layout Author Email
-
 dattani.nike@fukui.kyoto.ac.jp
 \end_layout
 
@@ -112,7 +111,6 @@ Yu Zhai
 \end_layout
 
 \begin_layout Author Email
-
 yuzhai@mail.huiligroup.org
 \end_layout
 
@@ -439,6 +437,21 @@ We therefore turn to a potential which doesn't have a quadratic long-range
 \end_layout
 
 \begin_layout Standard
+1D DELR:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V(r)=\left(Ae^{-2\beta\left(r\right)\left(r-r_{e}\right)}-Be^{-\beta\left(r\right)\left(r-r_{e}\right)}+\mathfrak{D}_{e}\right)-u\left(r\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 We first try the second way (using a summation) because that turned out
  to be a lot easier to think about:
 \end_layout
@@ -493,7 +506,7 @@ Now we have:
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 where 
@@ -753,31 +766,23 @@ V(r) & =D_{e}\left(1-e^{-\beta\left(r-r_{e}\right)}\right)^{2}\\
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Instead, we want a 'right' long-range behaviour.
- Let's try add a constant
+Instead, we want the 'right' long-range behaviour.
+ Let's try to add a constant:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-V'(r) & =D_{e}\left(1-e^{-\beta\left(r-r_{e}\right)}\right)^{2}-D_{e}\\
-\lim_{r\to\infty}V'\left(r\right) & =0
+\bar{V}(r) & =D_{e}\left(1-e^{-\beta\left(r-r_{e}\right)}\right)^{2}-D_{e}\\
+\lim_{r\to\infty}\bar{V}\left(r\right) & =0
 \end{align}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 That is good.
- But not the situation in 2D problem.
- The long-range behaviour should be controled by the diatomic potential.
- We difine the diatomic potential a
+ But not the situation in the 2D problem.
+ The long-range behavior should be controlled by the diatomic potential.
+ We define the diatomic potential as
 \begin_inset Formula 
 \begin{align}
 V_{\infty}(r) & =D_{\infty}\left(1-e^{-\beta_{\infty}\left(r-r_{e,\infty}\right)}\right)^{2}-D_{\infty}\\
@@ -786,37 +791,62 @@ V_{\infty}(r) & =D_{\infty}\left(1-e^{-\beta_{\infty}\left(r-r_{e,\infty}\right)
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 with all signs with subscript 
 \begin_inset Formula $\infty$
 \end_inset
 
  defined as the values for the 1D slice with one of the 
-\begin_inset Formula $r_{i}(i=1\text{or}2)$
+\begin_inset Formula $r_{i}(i=1\text{ or }2)$
 \end_inset
 
- goes to infinity.
- Considering the fact that no matter in which kind of 1D slice the energy
- for a single point should be the same, we have
+ going to infinity.
+ 
+\end_layout
+
+\begin_layout Standard
+Let's define some energies:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2}\right) & =\left\{ D_{e}\left(r_{2}\right)\left(1-e^{-\beta\left(r_{1}-r_{e}\left(r_{2}\right)\right)}\right)^{2}+D_{e}\left(r_{1}\right)\left(1-e^{-\beta\left(r_{2}-r_{e}\left(r_{1}\right)\right)}\right)^{2}-D_{e}(r_{2})-D_{e}(r_{1})+V_{\infty}(r_{1})+V_{\infty}(r_{2})\right\} /2\\
+V(\infty,\infty) & =0\\
+V(R_{e},R_{e}) & =-\mathfrak{D}_{e}\\
+V(\infty,R_{e}) & =-\mathfrak{D}_{e,{\rm diatomic}}+\\
+V(R_{e},\infty) & =-\mathfrak{D}_{e,{\rm diatomic}}+\\
+V_{{\rm diatomic}}(\infty) & =0\\
+V_{{\rm diatomic}}(R_{e,{\rm diatomic}}) & =-\mathfrak{D}_{e,{\rm diatomic}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Considering the fact that no matter which kind of 1D slice, the energy for
+ a single point should be the same, we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2}\right) & =\left(D_{e}\left(r_{2}\right)\left(1-e^{-\beta\left(r_{1}-r_{e}\left(r_{2}\right)\right)}\right)^{2}+D_{e}\left(r_{1}\right)\left(1-e^{-\beta\left(r_{2}-r_{e}\left(r_{1}\right)\right)}\right)^{2}-D_{e}(r_{2})-D_{e}(r_{1})+V_{{\rm diatomic}}(r_{1})+V_{{\rm diatomic}}(r_{2})\right)/2\\
+D_{e}(r_{2}) & =V(\infty,r_{2})-\min_{r_{1}}\left(V(r_{1},r_{2})\right)\\
+D_{e}(r_{2}) & =V_{{\rm diatomic}}(r_{2})-V_{{\rm {\rm min_{r_{1}}}}}(r_{2})\\
 r_{e}(R_{e}) & =R_{e}\quad\textrm{[The bond length at global minimum]}\\
 V\left(R_{e},R_{e}\right) & =-D_{e}(R_{e})+V_{\infty}(R_{e})\\
-V\left(\infty,R_{e}\right) & =\left\{ D_{e}(R_{e})+D_{e}\left(\infty\right)\left(1-e^{-\beta\left(R_{e}-r_{e}\left(\infty\right)\right)}\right)^{2}-D_{e}(R_{e})-D_{e}(\infty)+V_{\infty}(\infty)+V_{\infty}(R_{e})\right\} /2\\
- & =\left\{ D_{e}(R_{e})+D_{\infty}\left(1-e^{-\beta\left(R_{e}-r_{\infty}\right)}\right)^{2}-D_{e}(R_{e})-D_{\infty}+V_{\infty}(\infty)+V_{\infty}(R_{e})\right\} /2\\
- & =\left\{ D_{\infty}\left(1-e^{-\beta\left(R_{e}-r_{\infty}\right)}\right)^{2}-D_{\infty}+V_{\infty}(R_{e})\right\} /2\\
-V\left(R_{e},\infty\right) & =\left\{ D_{\infty}\left(1-e^{-\beta\left(R_{e}-r_{\infty}\right)}\right)^{2}-D_{\infty}+V_{\infty}(R_{e})\right\} /2\quad\text{[They are just something meaningless]}\\
-V\left(\infty,\infty\right) & =\left\{ D_{e}\left(\infty\right)+D_{e}\left(\infty\right)-D_{e}(\infty)-D_{e}(\infty)+V_{\infty}(\infty)+V_{\infty}(\infty)\right\} /2\\
+ & =-D_{e}(R_{e})+W\\
+V(\infty,r_{2}) & =\left(D_{e}\left(r_{2}\right)+D_{e}\left(r_{1}\right)\left(1-e^{-\beta\left(r_{2}-r_{e}\left(r_{1}\right)\right)}\right)^{2}-D_{e}\left(r_{2}\right)-D_{e}(\infty)+V_{{\rm diatomic}}(\infty)+V_{{\rm diatomic}}(r_{2})\right)/2\\
+ & =\left(D_{e}\left(r_{2}\right)+D_{e}\left(r_{1}\right)\left(1-e^{-\beta\left(r_{2}-r_{e}\left(r_{1}\right)\right)}\right)^{2}-D_{e}\left(r_{2}\right)-D_{e,{\rm diatomic}}+V_{{\rm diatomic}}(\infty)+V_{{\rm diatomic}}(r_{2})\right)/2\\
+V\left(\infty,R_{e}\right) & =\left\{ D_{e}(R_{e})+D_{e}\left(\infty\right)\left(1-e^{-\beta\left(R_{e}-r_{e}\left(\infty\right)\right)}\right)^{2}-D_{e}(R_{e})-D_{e}(\infty)+V_{{\rm diatomic}}(\infty)+V_{{\rm diatomic}}(R_{e})\right\} /2\\
+ & =\left\{ D_{e}(R_{e})+D_{\infty}\left(1-e^{-\beta\left(R_{e}-r_{\infty}\right)}\right)^{2}-D_{e}(R_{e})-D_{\infty}+V_{{\rm diatomic}}(\infty)+V_{{\rm diatomic}}(R_{e})\right\} /2\\
+ & =\left\{ D_{\infty}\left(1-e^{-\beta\left(R_{e}-r_{\infty}\right)}\right)^{2}-D_{\infty}+V_{{\rm diatomic}}(R_{e})\right\} /2\\
+V\left(R_{e},\infty\right) & =\left\{ D_{\infty}\left(1-e^{-\beta\left(R_{e}-r_{\infty}\right)}\right)^{2}-D_{\infty}+V_{{\rm diatomic}}(R_{e})\right\} /2\quad\text{[They are just something meaningless, because global \ensuremath{R_{e}} is different from diatomic Re]}\\
+V\left(\infty,\infty\right) & =\left\{ D_{e}\left(\infty\right)+D_{e}\left(\infty\right)-D_{e}(\infty)-D_{e}(\infty)+V_{{\rm diatomic}}(\infty)+V_{{\rm diatomic}}(\infty)\right\} /2\\
  & =0\\
 V(r_{e}(\infty),\infty) & =V(r_{\infty},\infty)\\
- & =\left\{ D_{e}\left(\infty\right)\left(1-e^{-\beta\left(r_{\infty}-r_{e}\left(\infty\right)\right)}\right)^{2}+D_{e}\left(r_{\infty}\right)\left(1-e^{-\beta\left(\infty-r_{e}\left(r_{\infty}\right)\right)}\right)^{2}-D_{e}(\infty)-D_{e}(r_{\infty})+V_{\infty}(r_{\infty})+V_{\infty}(\infty)\right\} /2\\
+ & =\left\{ D_{e}\left(\infty\right)\left(1-e^{-\beta\left(r_{\infty}-r_{e}\left(\infty\right)\right)}\right)^{2}+D_{e}\left(r_{\infty}\right)\left(1-e^{-\beta\left(\infty-r_{e}\left(r_{\infty}\right)\right)}\right)^{2}-D_{e}(\infty)-D_{e}(r_{\infty})+V_{{\rm diatomic}}(r_{\infty})+V_{{\rm diatomic}}(\infty)\right\} /2\\
  & =\left\{ 0+D_{e}\left(r_{\infty}\right)-D_{\infty}-D_{e}(r_{\infty})-D_{\infty}+0\right\} /2\\
  & =-D_{\infty}
 \end{align}
@@ -834,19 +864,22 @@ It seems that everything works perfectly.
 An alternative solution can be
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2}\right) & =D_{e}\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}\right)^{2}+D_{e}\left(1-e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2}+V_{12}\left(r_{1},r_{2}\right)\label{eq:symmetric2dmorse}\\
-V_{12}\left(r_{1},r_{2}\right) & =\left(W-D_{e}\right)\left(1-e^{-\beta\left(r_{1}-r_{e}\right)}e^{-\beta\left(r_{2}-r_{e}\right)}\right)^{2}\label{eq:V12}\\
-V_{12}\left(\infty,r_{e}\right) & =\left(W-D_{e}\right)\\
-V_{12}\left(r_{e},\infty\right) & =\left(W-D_{e}\right)\\
-V\left(r_{e},r_{e}\right) & =D_{12}\left(r_{e},r_{e}\right)=0\\
-V\left(\infty,r_{e}\right) & =D_{e}+D_{12}\left(\infty,r_{e}\right)\\
+V_{\text{BeH}_{2}}\left(r_{1},r_{2}\right) & =V_{\text{BeH}}(r_{1})+V_{\text{BeH}}(r_{2})+\bar{V}_{{\rm BeH}_{2}}(r_{1},r_{2})\label{eq:symmetric2dmorse}\\
+ & =D_{e,{\rm BeH}}\left(1-e^{-\beta\left(r_{1}-r_{e,{\rm BeH}}\right)}\right)^{2}+D_{e,{\rm BeH}}\left(1-e^{-\beta\left(r_{2}-r_{e,{\rm BeH}}\right)}\right)^{2}+\bar{V}_{{\rm BeH}_{2}}\left(r_{1},r_{2}\right)\\
+\bar{V}_{{\rm BeH}_{2}}\left(r_{1},r_{2}\right) & =\left(W-D_{e}\right)\left(1-e^{-\beta\left(r_{1}-r_{e,{\rm BeH_{2}}}\right)}e^{-\beta\left(r_{2}-r_{e,{\rm BeH_{2}}}\right)}\right)^{2}\label{eq:V12}\\
+\bar{V}_{{\rm BeH}_{2}}\left(\infty,r_{e,{\rm BeH}}\right) & =\left(W-D_{e}\right)\\
+\bar{V}_{{\rm BeH}_{2}}\left(r_{e,{\rm BeH}},\infty\right) & =\left(W-D_{e}\right)\\
+\bar{V}_{{\rm BeH}_{2}}\left(\infty,r_{e,{\rm BeH_{2}}}\right) & =\left(W-D_{e}\right)\\
+\bar{V}_{{\rm BeH}_{2}}\left(r_{e,{\rm BeH_{2}}},\infty\right) & =\left(W-D_{e}\right)\\
+\bar{V}_{{\rm BeH}_{2}}\left(\infty,\infty\right) & =\left(W-D_{e}\right)\\
+V\left(r_{e},r_{e}\right) & =\bar{V}_{{\rm BeH}_{2}}\left(r_{e},r_{e}\right)=0\text{ [NOT TRUE because Re for BeH and BeH\ensuremath{_{2}} is not the same!]}\\
+V\left(\infty,r_{e}\right) & =D_{e}+\bar{V}_{{\rm BeH}_{2}}\left(\infty,r_{e}\right)\\
  & =D_{e}+\left(V-D_{e}\right)=W\\
-V\left(r_{e},\infty\right) & =D_{12}\left(r_{e},\infty\right)+D_{e}\\
+V\left(r_{e},\infty\right) & =\bar{V}_{{\rm BeH}_{2}}\left(r_{e},\infty\right)+D_{e}\\
  & =\left(V-D_{e}\right)+D_{e}=W\\
-V\left(\infty,\infty\right) & =2D_{e}+D_{12}\left(\infty,\infty\right)\\
-V_{12}\left(\infty,\infty\right) & =-D_{e}+W\\
+V\left(\infty,\infty\right) & =2D_{e}+\bar{V}_{{\rm BeH}_{2}}\left(\infty,\infty\right)\\
  & =V\left(r_{1}=\infty,r_{2}=r_{e}\left(\infty\right)\right)+D_{e,{\rm diatomic}}\\
- & =W+D_{e}\\
+ & \equiv W+D_{e}\\
  & =D_{e}+W\\
  & =D_{e,{\rm diatomic}}+V\left(r_{1}=r_{e}\left(\infty\right),r_{2}=\infty\right)
 \end{align}
