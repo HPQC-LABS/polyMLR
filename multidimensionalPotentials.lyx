@@ -1,0 +1,303 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass revtex4-1
+\begin_preamble
+\usepackage{amsfonts}
+\usepackage{palatino}
+\end_preamble
+\options showpacs,preprintnumbers,amsmath,amssymb,aps,notitlepage
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Multidimensional Potentials
+\end_layout
+
+\begin_layout Author
+
+\lang british
+Nike Dattani
+\end_layout
+
+\begin_layout Author Email
+
+dattani.nike@fukui.kyoto.ac.jp
+\end_layout
+
+\begin_layout Affiliation
+
+\lang british
+Harvard Smithsonian Center for Astrophysics, Atomic and Molecular Physics
+ Division, Cambridge, Massachusetts, USA,
+\end_layout
+
+\begin_layout Affiliation
+
+\lang british
+McMaster University, Department of Chemistry and Chemical Biology, Hamilton,
+ Onario, Canada,
+\end_layout
+
+\begin_layout Date
+
+\lang british
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+A review of models for multi-dimensional potentials.
+ 
+\end_layout
+
+\begin_layout Section
+2D harmonic oscillator
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2}\right)= & \frac{1}{2}\left(k_{1}\left(r_{1}-r_{1,e}\right)^{2}+k_{2}\left(r_{2}-r_{2,e}\right)^{2}\right)
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+symmetric triatomics
+\end_layout
+
+\begin_layout Subsection
+Jensen
+\end_layout
+
+\begin_layout Standard
+Power series in Morse transformed bond lengths.
+ But even when one bond length goes to infinity, the potential depends on
+ the angle.
+ P.
+ Jensen, J.
+ Mol.
+ Spectrosc.
+ 128, 478 (1988).
+\end_layout
+
+\begin_layout Subsection
+Partridge-Schwenke (modified from something in Varandas's book 
+\begin_inset Quotes eld
+\end_inset
+
+Molecular Potential Energy Functions (1984)
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2},\theta\right) & =V^{a}\left(r_{1}\right)+V^{a}\left(r_{2}\right)+V^{b}\left(r_{{\rm HH}}\right)+V^{c}\left(r_{1},r_{2},\theta\right)\\
+V^{a}\left(r\right) & =D\left(1-e^{-a\left(r-r_{{\rm ref}}\right)}\right)^{2}\\
+V^{b}\left(r\right) & =Ae^{-br}\\
+V^{c}\left(r\right) & =e^{-\beta\left(\left(r_{1}-r_{e}\right)^{2}+\left(r_{2}-r_{e}\right)^{2}\right)}\sum_{ijk}c_{ijk}\left(\frac{r_{1}-r_{e}}{r_{e}}\right)^{i}\left(\frac{r_{2}-r_{e}}{r_{e}}\right)^{j}\left(\cos\theta-\cos\theta_{e}\right)^{k}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's evaluate the limits:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\lim_{r_{1}\rightarrow\infty}V\left(r_{1},r_{2},\theta\right) & =V^{a}\left(r_{2}\right)\\
+\lim_{r_{2}\rightarrow\infty}V\left(r_{1},r_{2},\theta\right) & =V^{a}\left(r_{1}\right)\\
+\lim_{\theta\rightarrow180^{\circ}}V\left(r_{1},r_{2},\theta\right) & =\text{nothing special}\\
+\lim_{r_{1},r_{2}\rightarrow\infty}V\left(r_{1},r_{2},\theta\right) & =0
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Huang-Schwenke-Tashkun-Lee
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V=V_{{\rm short}}+V_{{\rm long}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V_{{\rm short}} & =f_{{\rm damp}}\sum_{n}C_{ijk}^{n}P\left[\left(1-e^{-\beta\left(r_{1}-r_{{\rm ref}}\right)}\right)^{i}\left(1-e^{-\beta\left(r_{2}-r_{{\rm ref}}\right)}\right)^{j}\right]{\rm cos}^{k}\left(\pi-\theta\right)\\
+f_{{\rm damp}} & =e^{-\sum_{i,m}\left(d_{m}\left(r_{i}-r_{{\rm ref}}\right)^{2m}-\bar{d}_{m}\left(1+\cos\theta\right)^{2m}\right)}\\
+ & =e^{-d_{1}\left(\left(r_{1}-r_{{\rm ref}}\right)^{2}+\left(r_{2}-r_{{\rm ref}}\right)^{2}\right)-d_{2}\left(\left(r_{1}-r_{{\rm ref}}\right)^{4}+\left(r_{2}-r_{{\rm ref}}\right)^{4}\right)-d_{3}\left(\pi-\theta\right)^{2}-d_{4}\left(\pi-\theta\right)^{4}}\\
+V_{{\rm long}} & =\sum{}_{m}\left(D_{e,m}\sum_{i}\left(1-e^{-\beta\left(r_{i}-r_{{\rm ref}}\right)}\right)^{2m}+e^{-\tilde{d}\sum_{i}\left(r_{i}-r_{{\rm ref}}\right)^{2}}A_{e,m}\left(1+\cos\theta\right)^{2m}\right)
+\end{align}
+
+\end_inset
+
+Here 
+\begin_inset Formula $P[]$
+\end_inset
+
+ is a permutation operator used to ensure that: 
+\begin_inset Formula 
+\[
+P\left[\left(r_{1}-r_{{\rm ref}}\right)^{i}\left(r_{2}-r_{{\rm ref}}\right)^{j}\right]
+\]
+
+\end_inset
+
+ is totally invariant with respect to the interchange of two O atoms.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\lim_{r_{1}\rightarrow\infty}V\left(r_{1},r_{2},\theta\right) & =\sum{}_{m}\left(D_{e,m}\left(1-e^{-\beta\left(r_{2}-r_{{\rm ref}}\right)}\right)^{2m}\right)\\
+\lim_{r_{2}\rightarrow\infty}V\left(r_{1},r_{2},\theta\right) & =\sum{}_{m}\left(D_{e,m}\left(1-e^{-\beta\left(r_{1}-r_{{\rm ref}}\right)}\right)^{2m}\right)\\
+\lim_{\theta\rightarrow180^{\circ}}V\left(r_{1},r_{2},\theta\right) & =e^{-\sum_{i,m}\left(d_{m}\left(r_{i}-r_{{\rm ref}}\right)^{2m}\right)}\sum_{n}C_{ijk}^{n}P\left[\left(1-e^{-\beta\left(r_{1}-r_{{\rm ref}}\right)}\right)^{i}\left(1-e^{-\beta\left(r_{2}-r_{{\rm ref}}\right)}\right)^{j}\right]+\sum{}_{m}\left(D_{e,m}\sum_{i}\left(1-e^{-\beta\left(r_{i}-r_{{\rm ref}}\right)}\right)^{2m}\right)\\
+ & =V^{a}(r_{1})+V^{a}(r_{2})+V^{c}(r_{1},r_{2})\\
+\lim_{r_{1},r_{2}\rightarrow\infty}V\left(r_{1},r_{2},\theta\right) & =0
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+New Model
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2},\theta\right) & =V_{{\rm long_{BeH}}}\left(r_{1}\right)+V_{{\rm long_{BeH}}}\left(r_{2}\right)+V_{{\rm long_{H_{2}}}}\left(r_{{\rm HH}}\right)+V_{{\rm short}}\left(r_{1},r_{2},\theta\right)\\
+V_{{\rm long_{BeH}}}\left(r\right) & =\text{MLR}_{\text{BeH}}\\
+V_{{\rm long_{BeH}}}\left(r\right) & =\text{MLR}_{{\rm H_{2}}}\\
+V_{{\rm short}}\left(r_{1},r_{2},\theta\right) & =\sum_{k}C_{k}P\left[\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e}(\theta)}(r_{1})}\right)^{2}\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right)^{2}\right]e^{-\sum_{m}d_{m}\left(1+\cos\theta\right)^{2m}}{\rm cos}^{k}\left(\pi-\theta\right)\\
+\lim_{r_{1}\rightarrow\infty}V_{{\rm short}}\left(r_{1},r_{2},\theta\right) & =\sum_{k}C_{k}P\left[\left(1-e^{-\beta_{\infty}}\right)^{2}\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right)^{2}\right]e^{-\sum_{m}d_{m}\left(1+\cos\theta\right)^{2m}}{\rm cos}^{k}\left(\pi-\theta\right)\\
+\lim_{r_{1}\rightarrow\infty}V_{{\rm short}}\left(r_{1},r_{2},\theta\right)_{\beta_{\infty}=0} & =0\\
+\lim_{r_{2}\rightarrow\infty}V_{{\rm short}}\left(r_{1},r_{2},\theta\right)_{\beta_{\infty}=0} & =0\\
+V_{{\rm short}}\left(r_{1},r_{2},\pi\right) & =\sum_{k}C_{k}P\left[\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e,{\rm linear}}}(r_{1})}\right)^{2}\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e,{\rm linear}}}(r_{2})}\right)^{2}\right]\\
+V_{{\rm short}}\left(r_{e},r_{2},\theta\right) & =0\,\text{[PROBLEM!]}\\
+V_{{\rm short}}\left(r_{1},r_{2},\pi\right) & =\sum_{k}C_{k}\left[\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e,{\rm linear}}}(r_{1})}\right)+\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e,{\rm linear}}}(r_{2})}\right)\right]^{2}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "/home/nike/pCloud Sync/library,apssamp"
+options "apsrev4-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
