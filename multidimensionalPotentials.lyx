@@ -263,7 +263,23 @@ P\left[\left(r_{1}-r_{{\rm ref}}\right)^{i}\left(r_{2}-r_{{\rm ref}}\right)^{j}\
 \end_layout
 
 \begin_layout Subsection
-New Model
+New Model (inspired by Schwenke)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V_{{\rm short}}\left(r_{1},r_{2},\pi\right) & =\sum_{k}C_{k}P\left[\left(1-e^{-\beta_{p,q,k}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e,{\rm linear}}}(r_{1})}\right)^{2}\left(1-e^{-\beta_{p,q,k}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e,{\rm linear}}}(r_{2})}\right)^{2}\right]\\
+V_{{\rm short}}\left(r_{e},r_{2},\theta\right) & =0\,\text{[PROBLEM!]}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+New Model (perfect?)
 \end_layout
 
 \begin_layout Standard
@@ -272,13 +288,13 @@ New Model
 V\left(r_{1},r_{2},\theta\right) & =V_{{\rm long_{BeH}}}\left(r_{1}\right)+V_{{\rm long_{BeH}}}\left(r_{2}\right)+V_{{\rm long_{H_{2}}}}\left(r_{{\rm HH}}\right)+V_{{\rm short}}\left(r_{1},r_{2},\theta\right)\\
 V_{{\rm long_{BeH}}}\left(r\right) & =\text{MLR}_{\text{BeH}}\\
 V_{{\rm long_{BeH}}}\left(r\right) & =\text{MLR}_{{\rm H_{2}}}\\
-V_{{\rm short}}\left(r_{1},r_{2},\theta\right) & =\sum_{k}C_{k}P\left[\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e}(\theta)}(r_{1})}\right)^{2}\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right)^{2}\right]e^{-\sum_{m}d_{m}\left(1+\cos\theta\right)^{2m}}{\rm cos}^{k}\left(\pi-\theta\right)\\
-\lim_{r_{1}\rightarrow\infty}V_{{\rm short}}\left(r_{1},r_{2},\theta\right) & =\sum_{k}C_{k}P\left[\left(1-e^{-\beta_{\infty}}\right)^{2}\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right)^{2}\right]e^{-\sum_{m}d_{m}\left(1+\cos\theta\right)^{2m}}{\rm cos}^{k}\left(\pi-\theta\right)\\
+V_{{\rm short}}\left(r_{1},r_{2},\theta\right) & =\sum_{k}C_{k}P\left[\left(1-e^{-\beta_{p,q,k}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e}(\theta)}(r_{1})}e^{-\beta_{p,q,k}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right)\right]^{2}e^{-\sum_{m}d_{m}\left(1+\cos\theta\right)^{2m}}{\rm cos}^{k}\left(\pi-\theta\right)\\
+\lim_{r_{1}\rightarrow\infty}V_{{\rm short}}\left(r_{1},r_{2},\theta\right) & =\sum_{k}C_{k}P\left[\left(1-e^{-\beta_{p,q,k}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e}(\theta)}(r_{1})}e^{-\beta_{p,q,k}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right)\right]^{2}e^{-\sum_{m}d_{m}\left(1+\cos\theta\right)^{2m}}{\rm cos}^{k}\left(\pi-\theta\right)\\
 \lim_{r_{1}\rightarrow\infty}V_{{\rm short}}\left(r_{1},r_{2},\theta\right)_{\beta_{\infty}=0} & =0\\
 \lim_{r_{2}\rightarrow\infty}V_{{\rm short}}\left(r_{1},r_{2},\theta\right)_{\beta_{\infty}=0} & =0\\
-V_{{\rm short}}\left(r_{1},r_{2},\pi\right) & =\sum_{k}C_{k}P\left[\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e,{\rm linear}}}(r_{1})}\right)^{2}\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e,{\rm linear}}}(r_{2})}\right)^{2}\right]\\
-V_{{\rm short}}\left(r_{e},r_{2},\theta\right) & =0\,\text{[PROBLEM!]}\\
-V_{{\rm short}}\left(r_{1},r_{2},\pi\right) & =\sum_{k}C_{k}\left[\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e,{\rm linear}}}(r_{1})}\right)+\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e,{\rm linear}}}(r_{2})}\right)\right]^{2}
+V_{{\rm short}}\left(r_{1},r_{2},\pi\right) & =\sum_{k}C_{k}P\left[\left(1-e^{-\beta_{p,q,k}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e}(\theta)}(r_{1})}e^{-\beta_{p,q,k}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right)\right]^{2}\\
+V_{{\rm short}}\left(r_{e},r_{2},\pi\right) & =\sum_{k}C_{k}\left[\left(1-e^{-\beta_{p,q,k}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right)\right]^{2}\\
+V_{{\rm short}}\left(r_{1},r_{e},\pi\right) & =\sum_{k}C_{k}\left[\left(1-e^{-\beta_{p,q,k}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e}(\theta)}(r_{1})}\right)\right]^{2}
 \end{align}
 
 \end_inset
