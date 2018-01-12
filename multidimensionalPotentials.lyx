@@ -395,6 +395,16 @@ y_{p} & =\frac{y_{p,1}+y_{p,2}}{2},\\
 
 \end_inset
 
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+We need the P[,] operator in the last equation.
+\end_layout
+
+\end_inset
+
 Because of the fact that:
 \begin_inset Formula 
 \begin{align}
@@ -513,20 +523,27 @@ Let's see what happens if
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-\lim_{r_{1}\rightarrow\infty}\beta\left(r_{1},r_{2}\right) & =\beta_{\infty}\left(\frac{1-y_{p,2}}{2}\right)+\left(\frac{1-y_{p,2}}{2}\right)\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}\\
-\lim_{r_{1}\rightarrow\infty}e^{-\beta(r_{1},r_{2})y_{p}(r_{1},r_{2})} & =e^{-\beta_{\infty}\left(\frac{1-y_{p,2}}{2}\right)^{2}-\left(\frac{1-y_{p,2}}{2}\right)^{2}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\\
- & =e^{-\beta_{\infty}\left(\frac{1-y_{p,2}}{2}\right)^{2}}e^{-\left(\frac{1-y_{p,2}}{2}\right)^{2}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\\
- & =\left(\frac{u\left(r_{e,1},r_{e,2}\right)}{2\mathfrak{D}_{e}}\right)^{\left(\frac{1-y_{p,2}}{2}\right)^{2}}e^{-\left(\frac{1-y_{p,2}}{2}\right)^{2}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\\
-\lim_{r_{1}\rightarrow\infty}V_{{\rm LR}}(r_{1},r_{2})= & \mathfrak{D}_{e}\left(1-\left(\frac{u\left(r_{e,1},r_{e,2}\right)}{2\mathfrak{D}_{e}}\right)^{\left(\frac{1-y_{p,2}}{2}\right)^{2}}e^{-\left(\frac{1-y_{p,2}}{2}\right)^{2}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2}\\
-= & \mathfrak{D}_{e}\left(1-\left(\frac{u\left(r_{e,1},r_{e,2}\right)}{2\mathfrak{D}_{e}}\right)^{x}e^{-\left(\frac{1-y_{p,2}}{2}\right)^{2}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2},\,0<x<1\\
-= & \mathfrak{D}_{e}\left(1-\left(\frac{\frac{C_{6,{\rm CO(1)}}}{r_{1}^{6}}+\frac{C_{6,{\rm CO(2)}}}{r_{2}^{6}}+\frac{C_{6,{\rm OO}}}{r_{\text{OO}}^{6}}}{2\mathfrak{D}_{e}}\right)^{x}e^{-\left(\frac{1-y_{p,2}}{2}\right)^{2}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2},\,0<x<1\\
-= & \mathfrak{D}_{e}\left(1-\left(\frac{C_{6,{\rm CO(2)}}}{2\mathfrak{D}_{e}r_{2}^{6}}\right)^{x}e^{-\left(\frac{1-y_{p,2}}{2}\right)^{2}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2},\,0<x<1\\
-= & \mathfrak{D}_{e}\left(1-\bar{x}e^{-\left(\frac{1-y_{p,2}}{2}\right)^{2}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2},\,1<\bar{x}<\frac{C_{6,{\rm CO(2)}}}{2\mathfrak{D}_{e}r_{2}^{6}}
+\lim_{r_{1}\rightarrow\infty}\beta\left(r_{1},r_{2}\right) & =\beta_{\infty}\left(\frac{1+y_{p,2}}{2}\right)+\left(\frac{1-y_{p,2}}{2}\right)\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}\\
+\lim_{r_{1}\rightarrow\infty}e^{-\beta(r_{1},r_{2})y_{p}(r_{1},r_{2})} & =e^{-\beta_{\infty}\left(\frac{1+y_{p,2}}{2}\right)^{2}-\frac{1-y_{p,2}^{2}}{4}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\\
+ & =e^{-\beta_{\infty}\left(\frac{1+y_{p,2}}{2}\right)^{2}}e^{-\frac{1-y_{p,2}^{2}}{4}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\\
+ & =\left(\frac{u\left(r_{e,1},r_{e,2}\right)}{2\mathfrak{D}_{e}}\right)^{\left(\frac{1+y_{p,2}}{2}\right)^{2}}e^{-\frac{1-y_{p,2}^{2}}{4}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\\
+\lim_{r_{1}\rightarrow\infty}V_{{\rm LR}}(r_{1},r_{2})= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}\left(\frac{u\left(r_{e,1},r_{e,2}\right)}{2\mathfrak{D}_{e}}\right)^{\left(\frac{1+y_{p,2}}{2}\right)^{2}}e^{-\frac{1-y_{p,2}^{2}}{4}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2}\\
+= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}\left(\frac{u\left(r_{e,1},r_{e,2}\right)}{2\mathfrak{D}_{e}}\right)^{x}e^{-\frac{1}{4}+\frac{y_{p,2}^{2}}{4}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2},\,0<x<1\\
+= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}\bar{x}\left(r_{2}\right)e^{\frac{y_{p,2}^{2}}{4}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2},\,e^{-\nicefrac{1}{4}}<\bar{x}\left(r_{2}\right)<\frac{C_{6,{\rm CO(2)}}D_{6,{\rm CO(2)}}(r_{e})e^{-\nicefrac{1}{4}}}{2\mathfrak{D}_{e}r_{e,2}^{6}}
 \end{align}
 
 \end_inset
 
+We could define a 
+\begin_inset Formula $\beta_{\infty,r_{1}}$
+\end_inset
 
+ to remove the 
+\begin_inset Formula $\bar{x}(r_{2})$
+\end_inset
+
+ so that this last equation looks almost identical to the 1D-MLR, however
+ this does not yet seem to be necessary.
 \end_layout
 
 \begin_layout Section
