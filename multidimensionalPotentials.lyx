@@ -398,9 +398,9 @@ y_{p} & =\frac{y_{p,1}+y_{p,2}}{2},\\
 Because of the fact that:
 \begin_inset Formula 
 \begin{align}
-\lim_{r\rightarrow\infty}y_{p} & =1,\text{we have}\\
-\lim_{r\rightarrow\infty}\beta(r) & =\beta_{\infty},\,\text{and}\\
-\lim_{r\rightarrow\infty}e^{-\beta\left(r\right)y_{p}\left(r\right)} & =\nicefrac{1}{e^{\beta_{\infty}}}.
+\lim_{r_{1},r_{2}\rightarrow\infty}y_{p} & =1,\text{we have}\\
+\lim_{r_{1},r_{2}\rightarrow\infty}\beta(r) & =\beta_{\infty},\,\text{and}\\
+\lim_{r_{1},r_{2}\rightarrow\infty}e^{-\beta\left(r\right)y_{p}\left(r\right)} & =\nicefrac{1}{e^{\beta_{\infty}}}.
 \end{align}
 
 \end_inset
@@ -428,7 +428,78 @@ V_{{\rm LR}}(r_{1},r_{2})=\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right
 \end_inset
 
 This looks exactly like it did for the 1D case.
+ Let's try to see if it works though:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+u\left(r_{1},r_{2}\right) & =\frac{C_{6,{\rm CO(1)}}}{r_{1}^{6}}+\frac{C_{6,{\rm CO(2)}}}{r_{2}^{6}}+\frac{C_{6,{\rm OO}}}{r_{\text{OO}}^{6}},\\
+V_{{\rm LR}}(r_{1},r_{2}) & =\mathfrak{D}_{e}-\frac{C_{6,\text{CO(1)}}}{r_{1}^{6}}-\frac{C_{6,\text{CO(2)}}}{r_{2}^{6}}-\frac{C_{6,{\rm OO}}}{r_{\text{OO}}^{6}}\label{eq:Long-rangeOfPolyMLRWithC6's}\\
+ & +\frac{C_{6,\text{CO(1)}}^{2}}{r_{1}^{12}}+\frac{C_{6,\text{CO(2)}}^{2}}{r_{2}^{12}}+\frac{C_{6,\text{OO}}^{2}}{r_{\text{OO}}^{12}}+\frac{2C_{6,\text{CO(1)}}C_{6,\text{CO(2)}}}{r_{1}^{6}r_{2}^{6}}+\frac{2C_{6,\text{CO(1)}}C_{6,\text{OO}}}{r_{1}^{6}r_{\text{OO}}^{6}}+\frac{2C_{6,\text{CO(2)}}C_{6,\text{OO}}}{r_{2}^{6}r_{\text{OO}}^{6}}.
+\end{align}
+
+\end_inset
+
+Where 
+\begin_inset Formula $r_{{\rm OO}}=\sqrt{r_{1}^{2}+r_{2}^{2}-2r_{1}r_{2}\cos\theta}$
+\end_inset
+
+.
+ While it looks like the cross-terms (such as the one with 
+\begin_inset Formula $C_{6,\text{CO(1)}}C_{6,\text{CO(2)}}$
+\end_inset
+
+) might be problematic because it has the same 
+\begin_inset Formula $r_{i}$
+\end_inset
+
+-dependence as the 
+\begin_inset Formula $r_{i}^{6}$
+\end_inset
+
+ terms, we must keep in mind that Eq.
  
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Long-rangeOfPolyMLRWithC6's"
+
+\end_inset
+
+ was only valid for the case where 
+\begin_inset Formula $r_{1}$
+\end_inset
+
+ 
+\series bold
+\bar under
+and
+\series default
+\bar default
+ 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ were very large, so indeed the last three terms of Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Long-rangeOfPolyMLRWithC6's"
+
+\end_inset
+
+ are much smaller than the rest of the terms when and we have:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{{\rm LR}}(r_{1},r_{2})=\mathfrak{D}_{e}-\frac{C_{6,1}}{r_{1}^{6}}-\frac{C_{6,2}}{r_{2}^{6}}-\frac{C_{6,{\rm OO}}}{r_{\text{OO}}^{6}}.
+\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
