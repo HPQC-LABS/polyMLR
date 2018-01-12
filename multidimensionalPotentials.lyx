@@ -390,7 +390,7 @@ V\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\ri
 \begin_inset Formula 
 \begin{align}
 y_{p} & =\frac{y_{p,1}+y_{p,2}}{2},\\
-\beta\left(r\right) & =\beta_{\infty}y_{p}+\left(1-y_{p}\right)\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,1}\right)^{i}\left(y_{p,2}\right)^{j}
+\beta & =\beta_{\infty}y_{p}+\left(1-y_{p}\right)\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,1}\right)^{i}\left(y_{p,2}\right)^{j}
 \end{align}
 
 \end_inset
@@ -496,6 +496,33 @@ reference "eq:Long-rangeOfPolyMLRWithC6's"
 \begin{equation}
 V_{{\rm LR}}(r_{1},r_{2})=\mathfrak{D}_{e}-\frac{C_{6,1}}{r_{1}^{6}}-\frac{C_{6,2}}{r_{2}^{6}}-\frac{C_{6,{\rm OO}}}{r_{\text{OO}}^{6}}.
 \end{equation}
+
+\end_inset
+
+Let's see what happens if 
+\begin_inset Formula $r_{1}\rightarrow\infty$
+\end_inset
+
+ but 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ does not:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\lim_{r_{1}\rightarrow\infty}\beta\left(r_{1},r_{2}\right) & =\beta_{\infty}\left(\frac{1-y_{p,2}}{2}\right)+\left(\frac{1-y_{p,2}}{2}\right)\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}\\
+\lim_{r_{1}\rightarrow\infty}e^{-\beta(r_{1},r_{2})y_{p}(r_{1},r_{2})} & =e^{-\beta_{\infty}\left(\frac{1-y_{p,2}}{2}\right)^{2}-\left(\frac{1-y_{p,2}}{2}\right)^{2}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\\
+ & =e^{-\beta_{\infty}\left(\frac{1-y_{p,2}}{2}\right)^{2}}e^{-\left(\frac{1-y_{p,2}}{2}\right)^{2}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\\
+ & =\left(\frac{u\left(r_{e,1},r_{e,2}\right)}{2\mathfrak{D}_{e}}\right)^{\left(\frac{1-y_{p,2}}{2}\right)^{2}}e^{-\left(\frac{1-y_{p,2}}{2}\right)^{2}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\\
+\lim_{r_{1}\rightarrow\infty}V_{{\rm LR}}(r_{1},r_{2})= & \mathfrak{D}_{e}\left(1-\left(\frac{u\left(r_{e,1},r_{e,2}\right)}{2\mathfrak{D}_{e}}\right)^{\left(\frac{1-y_{p,2}}{2}\right)^{2}}e^{-\left(\frac{1-y_{p,2}}{2}\right)^{2}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2}\\
+= & \mathfrak{D}_{e}\left(1-\left(\frac{u\left(r_{e,1},r_{e,2}\right)}{2\mathfrak{D}_{e}}\right)^{x}e^{-\left(\frac{1-y_{p,2}}{2}\right)^{2}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2},\,0<x<1\\
+= & \mathfrak{D}_{e}\left(1-\left(\frac{\frac{C_{6,{\rm CO(1)}}}{r_{1}^{6}}+\frac{C_{6,{\rm CO(2)}}}{r_{2}^{6}}+\frac{C_{6,{\rm OO}}}{r_{\text{OO}}^{6}}}{2\mathfrak{D}_{e}}\right)^{x}e^{-\left(\frac{1-y_{p,2}}{2}\right)^{2}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2},\,0<x<1\\
+= & \mathfrak{D}_{e}\left(1-\left(\frac{C_{6,{\rm CO(2)}}}{2\mathfrak{D}_{e}r_{2}^{6}}\right)^{x}e^{-\left(\frac{1-y_{p,2}}{2}\right)^{2}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2},\,0<x<1\\
+= & \mathfrak{D}_{e}\left(1-\bar{x}e^{-\left(\frac{1-y_{p,2}}{2}\right)^{2}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2},\,1<\bar{x}<\frac{C_{6,{\rm CO(2)}}}{2\mathfrak{D}_{e}r_{2}^{6}}
+\end{align}
 
 \end_inset
 
