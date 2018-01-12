@@ -285,15 +285,15 @@ New Model (perfect?)
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2},\theta\right) & =V_{{\rm long_{BeH}}}\left(r_{1}\right)+V_{{\rm long_{BeH}}}\left(r_{2}\right)+V_{{\rm long_{H_{2}}}}\left(r_{{\rm HH}}\right)+V_{{\rm short}}\left(r_{1},r_{2},\theta\right)\\
+V\left(r_{1},r_{2},\theta\right) & =V_{{\rm long_{BeH}}}\left(r_{1}\right)+V_{{\rm long_{BeH}}}\left(r_{2}\right)+V_{{\rm long_{H_{2}}}}\left(r_{{\rm HH}}\right)+V_{{\rm long,nonadditive,LR}}\left(r_{1},r_{2},\theta\right)+V_{{\rm short}}\left(r_{1},r_{2},\theta\right)\\
 V_{{\rm long_{BeH}}}\left(r\right) & =\text{MLR}_{\text{BeH}}\\
 V_{{\rm long_{BeH}}}\left(r\right) & =\text{MLR}_{{\rm H_{2}}}\\
-V_{{\rm short}}\left(r_{1},r_{2},\theta\right) & =e^{-\sum_{i,m}\left(d_{m}\left(r_{i}-r_{{\rm ref}}\right)^{2m}\right)}P\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e}(\theta)}(r_{1})}e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right)e^{-\sum_{m}\bar{d}_{m}\left(1+\cos\theta\right)^{2m}}{\rm cos}^{k}\left(\pi-\theta\right)-\left(\frac{e^{-(r_{1}^{2}+r_{2}^{2})}}{e^{-(r_{e}^{2}+r_{e}^{2})}}\right)\mathfrak{D}_{e}\\
+V_{{\rm short}}\left(r_{1},r_{2},\theta\right) & =e^{-\sum_{i,m}\left(d_{m}\left(r_{i}-r_{{\rm ref}}\right)^{2m}\right)}P\left[1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e}(\theta)}(r_{1})}e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right]e^{-\sum_{m}\bar{d}_{m}\left(1+\cos\theta\right)^{2m}}{\rm cos}^{k}\left(\pi-\theta\right)-e^{-(r_{1}+r_{2}-2r_{e})}\mathfrak{D}_{e}\\
 \lim_{r_{1}\rightarrow\infty}V_{{\rm short}}\left(r_{1},r_{2},\theta\right) & =0\\
 \lim_{r_{2}\rightarrow\infty}V_{{\rm short}}\left(r_{1},r_{2},\theta\right) & =0\\
-V_{{\rm short}}\left(r_{1},r_{2},\pi\right) & =P\left[\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e}(\theta)}(r_{1})}e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right)^{}\right]-\mathfrak{D}_{e}\\
-V_{{\rm short}}\left(r_{e},r_{2},\pi\right) & =\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right)-\mathfrak{D}_{e}\\
-V_{{\rm short}}\left(r_{1},r_{e},\pi\right) & =\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e}(\theta)}(r_{1})}\right)-\mathfrak{D}_{e}\\
+V_{{\rm short}}\left(r_{1},r_{2},\pi\right) & =e^{-\sum_{i,m}\left(d_{m}\left(r_{i}-r_{{\rm ref}}\right)^{2m}\right)}P\left[\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e}(\theta)}(r_{1})}e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right)^{}\right]-\mathfrak{D}_{e}\\
+V_{{\rm short}}\left(r_{e},r_{2},\pi\right) & =e^{-\sum_{i,m}\left(d_{m}\left(r_{i}-r_{{\rm ref}}\right)^{2m}\right)}\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right)-\mathfrak{D}_{e}\\
+V_{{\rm short}}\left(r_{1},r_{e},\pi\right) & =e^{-\sum_{i,m}\left(d_{m}\left(r_{i}-r_{{\rm ref}}\right)^{2m}\right)}\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e}(\theta)}(r_{1})}\right)-\mathfrak{D}_{e}\\
 V_{{\rm short}}\left(r_{e},r_{e},\pi\right) & =-\mathfrak{D}_{e}
 \end{align}
 
