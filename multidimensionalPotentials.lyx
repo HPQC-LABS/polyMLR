@@ -77,7 +77,7 @@
 \begin_body
 
 \begin_layout Title
-Multidimensional Potentials
+Analytic Potentials for Polyatomics
 \end_layout
 
 \begin_layout Author
@@ -143,6 +143,291 @@ today
 
 \begin_layout Abstract
 A review of models for multi-dimensional potentials.
+ 
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+The MLR (Morse/Long-range) function has been very successful for diatomic
+ molecules (systems with one radial coordiate) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LeRoy2006,LeRoy2007,Salami2007,Shayesteh2007,LeRoy2009,Coxon2010,Stein2010,Piticco2010a,LeRoy2011,Ivanova2011,Dattani2011,Xie2011,Yukiya2013,Knockel2013,Semczuk2013,Wang2013,Li2013,Gunton2013,Meshkov2014,Dattani2014c,Coxon2015,Walji2015,Dattani2015,Dattani2014b"
+
+\end_inset
+
+.
+ Even for Van der Waals comlpexes, where the potential depends on one radial
+ corrdinate and one or many anglular coordinates, it has been possible to
+ build multi-dimensional MLR potential energy functions since for fixed
+ values of all angular coordinates we can use the 1D-MLR to represent the
+ energy dependence on the single radial coordinate 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Li2008,Li2010,Tritzant-Martinez2013,Wang2013,Li2013a,Ma2014"
+
+\end_inset
+
+.
+ However the mathematics is much more complicated for systems with more
+ than one radial coordinate and such systems are still commonly represented
+ by splines (which are not analytic functons, do not extrapolate properly,
+ and suffer from spurious oscillations between the points on which they
+ are based).
+ A very simple example of a system with two radial coordinates is CO
+\begin_inset Formula $_{2}$
+\end_inset
+
+.
+ We will focus our discussion on building a potential for CO
+\begin_inset Formula $_{2}$
+\end_inset
+
+, and will generalize to systems with arbitrary numbers of radial and angular
+ coordinates after.
+\end_layout
+
+\begin_layout Section
+Review: MLR for diatomics
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+V\left(r\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r\right)}{u\left(r_{e}\right)}e^{-\beta\left(r\right)y_{p}\left(r\right)}\right)^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{p}=\frac{r^{p}-r_{e}^{p}}{r^{p}+r_{e}^{p}}\,,\,\beta\left(r\right)=\beta_{\infty}y_{p}+\left(1-y_{p}\right)\sum_{i=0}^{N_{\beta}}\beta_{i}\left(y_{p}\right)^{i}
+\end{equation}
+
+\end_inset
+
+Because of the fact that:
+\begin_inset Formula 
+\begin{align}
+\lim_{r\rightarrow\infty}y_{p} & =1,\text{we have}\\
+\lim_{r\rightarrow\infty}\beta(r) & =\beta_{\infty},\,\text{and}\\
+\lim_{r\rightarrow\infty}e^{-\beta\left(r\right)y_{p}\left(r\right)} & =\nicefrac{1}{e^{\beta_{\infty}}}.
+\end{align}
+
+\end_inset
+
+Therefore we can define:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\beta_{\infty}=\ln\left(\frac{2\mathfrak{D}_{e}}{u\left(r_{e}\right)}\right),
+\end{equation}
+
+\end_inset
+
+which leads us to the famous long-range form for the MLR:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V_{{\rm LR}}(r) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r\right)}{2\mathfrak{D}_{e}}\right)^{2}\\
+ & =\mathfrak{D}_{e}-u\left(r\right)+\frac{u\left(r\right)^{2}}{4\mathfrak{D}_{e}}.\label{eq:V_LR}
+\end{align}
+
+\end_inset
+
+We can therefore decide by ourselves what we want the MLR potential to look
+ like for large 
+\begin_inset Formula $r$
+\end_inset
+
+, by definint 
+\begin_inset Formula $u\left(r_{e}\right)$
+\end_inset
+
+ accordingly.
+ For example theory tells us that an excited electronic state of Li
+\begin_inset Formula $_{2}$
+\end_inset
+
+ dissociating to Li
+\begin_inset Formula $\left(S\right)$
+\end_inset
+
++ Li
+\begin_inset Formula $\left(P\right)$
+\end_inset
+
+ should have a long-range potential of the form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{{\rm LR}}(r)=\mathfrak{D}_{e}-\frac{C_{3}}{r^{3}}-\frac{C_{6}}{r^{6}}-\cdots,
+\end{equation}
+
+\end_inset
+
+so all we have to do is define: 
+\begin_inset Formula 
+\begin{equation}
+u(r)=\frac{C_{3}}{r^{3}}+\frac{C_{6}-\frac{C_{3}^{2}}{4\mathfrak{D}_{e}}}{r^{6}},
+\end{equation}
+
+\end_inset
+
+and Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:V_LR"
+
+\end_inset
+
+ becomes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V_{{\rm LR}}(r) & =\mathfrak{D}_{e}-\frac{C_{3}}{r^{3}}+\frac{C_{6}}{r^{6}}+\frac{\frac{C_{6}^{2}}{4\mathfrak{D}_{e}}}{r^{12}}\\
+ & =\mathfrak{D}_{e}-\frac{C_{3}}{r^{3}}+\frac{C_{6}}{r^{6}}\,\text{(because \ensuremath{\nicefrac{1}{r^{12}}} is much smaller than \ensuremath{\nicefrac{1}{r^{6}}} when \ensuremath{r\rightarrow\infty)}.}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Review: MLR for van der waals complexes
+\end_layout
+
+\begin_layout Standard
+A van der Waals complex consists of two systems very far away from each
+ other.
+ They are typically so far away from each other that the potential energy
+ associated with their interacton doesn't depend on the internal structures
+ of each system, and therefore only depends on the distance between them
+ 
+\begin_inset Formula $(r)$
+\end_inset
+
+ and the angles formed with the variou axes of the individual systems: 
+\begin_inset Formula $V=V(r,\theta_{1},\theta_{2},\theta_{3},\ldots)$
+\end_inset
+
+.
+ We can fix all angles and fit the resulting 1D potential using the above
+ form.
+ 
+\end_layout
+
+\begin_layout Section
+Poly-MLR: An MLR for polyatomics
+\end_layout
+
+\begin_layout Standard
+Things get complicated when we care not just about inter-molecular forces
+ (as in van der Waals complexes) but also on the intra-molecular forces,
+ which depend on more than on radial coordinate when the number of atoms
+ is larger than two.
+ For example the CO
+\begin_inset Formula $_{2}$
+\end_inset
+
+ potential has the form: 
+\begin_inset Formula $V=V(r_{1},r_{2},\theta)$
+\end_inset
+
+.
+ The 
+\begin_inset Formula $\theta$
+\end_inset
+
+-dependence is of no theoretical concern since we can treat it the way we
+ did for the van der Waals complexes.
+ So let's start by thinking about a CO
+\begin_inset Formula $_{2}$
+\end_inset
+
+ molecule with 
+\begin_inset Formula $\theta$
+\end_inset
+
+ fixed at 
+\begin_inset Formula $180^{\circ}=\pi$
+\end_inset
+
+ (ie.
+ fixed to stay linear).
+ The poly-MLR for the two radial coordinates can look like this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)}\right)^{2}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+y_{p} & =\frac{y_{p,1}+y_{p,2}}{2},\\
+\beta\left(r\right) & =\beta_{\infty}y_{p}+\left(1-y_{p}\right)\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,1}\right)^{i}\left(y_{p,2}\right)^{j}
+\end{align}
+
+\end_inset
+
+Because of the fact that:
+\begin_inset Formula 
+\begin{align}
+\lim_{r\rightarrow\infty}y_{p} & =1,\text{we have}\\
+\lim_{r\rightarrow\infty}\beta(r) & =\beta_{\infty},\,\text{and}\\
+\lim_{r\rightarrow\infty}e^{-\beta\left(r\right)y_{p}\left(r\right)} & =\nicefrac{1}{e^{\beta_{\infty}}}.
+\end{align}
+
+\end_inset
+
+Therefore we can define:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\beta_{\infty} & =\ln\left(\frac{2\mathfrak{D}_{e}}{u\left(r_{e,1},r_{e,2}\right)}\right),
+\end{align}
+
+\end_inset
+
+and we get:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{{\rm LR}}(r_{1},r_{2})=\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{2\mathfrak{D}_{e}}\right)^{2}=\mathfrak{D}_{e}-u\left(r_{1},r_{2}\right)+\frac{u\left(r_{1},r_{2}\right)^{2}}{4\mathfrak{D}_{e}}.
+\end{equation}
+
+\end_inset
+
+This looks exactly like it did for the 1D case.
  
 \end_layout
 
