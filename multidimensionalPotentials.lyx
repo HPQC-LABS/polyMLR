@@ -86,8 +86,7 @@ Analytic Potentials for Polyatomics
 Nike Dattani
 \end_layout
 
-\begin_layout Author Email
-
+\begin_layout Author
 dattani.nike@fukui.kyoto.ac.jp
 \end_layout
 
@@ -111,8 +110,7 @@ McMaster University, Department of Chemistry and Chemical Biology, Hamilton,
 Yu Zhai
 \end_layout
 
-\begin_layout Author Email
-
+\begin_layout Author
 yuzhai@mail.huiligroup.org
 \end_layout
 
@@ -153,6 +151,22 @@ Introduction
 \begin_layout Standard
 The MLR (Morse/Long-range) function has been very successful for diatomic
  molecules (systems with one radial coordiate) 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LeRoy2009,Dattani2011,Xie2011,Yukiya2013,Knockel2013,Semczuk2013,Wang2013,Li2013,Gunton2013,Meshkov2014,Dattani2014c,Coxon2015,Walji2015,Dattani2015,Dattani2014b"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LeRoy2006,LeRoy2007,Salami2007,Shayesteh2007,LeRoy2009,Coxon2010,Stein2010,Piticco2010a,LeRoy2011,Ivanova2011,Dattani2011,Xie2011,Yukiya2013,Knockel2013,Semczuk2013,Wang2013,Li2013,Gunton2013,Meshkov2014,Dattani2014c,Coxon2015,Walji2015,Dattani2015,Dattani2014b"
@@ -213,12 +227,14 @@ y_{p}=\frac{r^{p}-r_{e}^{p}}{r^{p}+r_{e}^{p}}\,,\,\beta\left(r\right)=\beta_{\in
 
 \end_inset
 
-Because of the fact that:
+Because of the fact that 
+\begin_inset Formula $\lim_{r\rightarrow\infty}y_{p}=1$
+\end_inset
+
+, we have:
 \begin_inset Formula 
 \begin{align}
-\lim_{r\rightarrow\infty}y_{p} & =1,\text{we have}\\
-\lim_{r\rightarrow\infty}\beta(r) & =\beta_{\infty},\,\text{and}\\
-\lim_{r\rightarrow\infty}e^{-\beta\left(r\right)y_{p}\left(r\right)} & =\nicefrac{1}{e^{\beta_{\infty}}}.
+\lim_{r\rightarrow\infty}\beta(r) & =\beta_{\infty},\,\text{\ensuremath{\lim_{r\rightarrow\infty}}\ensuremath{e^{-\beta\left(r\right)y_{p}\left(r\right)}}}.
 \end{align}
 
 \end_inset
@@ -251,7 +267,7 @@ We can therefore decide by ourselves what we want the MLR potential to look
 \begin_inset Formula $r$
 \end_inset
 
-, by definint 
+, by defining 
 \begin_inset Formula $u\left(r_{e}\right)$
 \end_inset
 
@@ -335,7 +351,7 @@ A van der Waals complex consists of two systems very far away from each
 \end_layout
 
 \begin_layout Section
-Poly-MLR: An MLR for polyatomics
+Poly-MLR: An MLR for triatomics
 \end_layout
 
 \begin_layout Standard
@@ -376,9 +392,46 @@ Things get complicated when we care not just about inter-molecular forces
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Problem here is that at r1=re, V(r2) has a prefactor of 1/2, not 0.
+ maybe exponentials are needed after all.
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)}\right)^{2}
+V\left(r_{1},r_{2}\right) & =\left(\frac{1+y_{p,2}}{2}\right)V_{\text{CO(1)}}\left(r_{1}\right)+\left(\frac{1+y_{p,1}}{2}\right)V_{\text{CO(2)}}\left(r_{2}\right)+\left(\frac{1+y_{p}\left(r_{{\rm OO}}\right)}{2}\right)V_{\text{OO}}\left(r_{{\rm OO}}\right)+V_{{\rm Triatomic}}\left(r_{1},r_{2}\right)\\
+V_{{\rm LR}}\left(r_{1},r_{2}\right) & =V_{\text{LR,CO(1)}}\left(r_{1}\right)+V_{\text{LR,CO(2)}}\left(r_{2}\right)+V_{\text{LR,OO}}\left(r_{{\rm OO}}\right)+V_{{\rm LR,{\rm Triatomic}}}\left(r_{1},r_{2}\right)\\
+\lim_{r_{1}\rightarrow\infty}V\left(r_{1},r_{2}\right) & =
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2}\right) & =y_{p,+}\left(V_{\text{CO(1)}}\left(r_{1}\right)+V_{\text{CO(2)}}\left(r_{2}\right)+V_{\text{OO}}\left(r_{{\rm OO}}\right)\right)+V_{{\rm Triatomic}}\left(r_{1},r_{2}\right)\\
+V_{{\rm LR}}\left(r_{1},r_{2}\right) & =V_{\text{LR,CO(1)}}\left(r_{1}\right)+V_{\text{LR,CO(2)}}\left(r_{2}\right)+V_{\text{LR,OO}}\left(r_{{\rm OO}}\right)+V_{{\rm LR,{\rm Triatomic}}}\left(r_{1},r_{2}\right)\\
+\lim_{r_{1}\rightarrow\infty}V\left(r_{1},r_{2}\right) & =
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V_{{\rm Triatomic}}\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}e^{-\beta\left(r_{1},r_{2}\right)y_{p}\left(r_{1},r_{2}\right)}\right)^{2}
 \end{align}
 
 \end_inset
@@ -405,12 +458,14 @@ We need the P[,] operator in the last equation.
 
 \end_inset
 
-Because of the fact that:
+Because of the fact that 
+\begin_inset Formula $\lim_{r_{1},r_{2}\rightarrow\infty}y_{p}=1,\text{we have}$
+\end_inset
+
+:
 \begin_inset Formula 
 \begin{align}
-\lim_{r_{1},r_{2}\rightarrow\infty}y_{p} & =1,\text{we have}\\
-\lim_{r_{1},r_{2}\rightarrow\infty}\beta(r) & =\beta_{\infty},\,\text{and}\\
-\lim_{r_{1},r_{2}\rightarrow\infty}e^{-\beta\left(r\right)y_{p}\left(r\right)} & =\nicefrac{1}{e^{\beta_{\infty}}}.
+\lim_{r_{1},r_{2}\rightarrow\infty}\beta(r)=\beta_{\infty},\, & \lim_{r_{1},r_{2}\rightarrow\infty}e^{-\beta\left(r\right)y_{p}\left(r\right)}=\nicefrac{1}{e^{\beta_{\infty}}}.
 \end{align}
 
 \end_inset
@@ -431,9 +486,10 @@ and we get:
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{equation}
-V_{{\rm LR}}(r_{1},r_{2})=\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{2\mathfrak{D}_{e}}\right)^{2}=\mathfrak{D}_{e}-u\left(r_{1},r_{2}\right)+\frac{u\left(r_{1},r_{2}\right)^{2}}{4\mathfrak{D}_{e}}.
-\end{equation}
+\begin{align}
+V_{{\rm LR}}(r_{1},r_{2}) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{2\mathfrak{D}_{e}}\right)^{2}\\
+ & =\mathfrak{D}_{e}-u\left(r_{1},r_{2}\right)+\frac{u\left(r_{1},r_{2}\right)^{2}}{4\mathfrak{D}_{e}}.
+\end{align}
 
 \end_inset
 
@@ -444,9 +500,9 @@ This looks exactly like it did for the 1D case.
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-u\left(r_{1},r_{2}\right) & =\frac{C_{6,{\rm CO(1)}}}{r_{1}^{6}}+\frac{C_{6,{\rm CO(2)}}}{r_{2}^{6}}+\frac{C_{6,{\rm OO}}}{r_{\text{OO}}^{6}},\\
-V_{{\rm LR}}(r_{1},r_{2}) & =\mathfrak{D}_{e}-\frac{C_{6,\text{CO(1)}}}{r_{1}^{6}}-\frac{C_{6,\text{CO(2)}}}{r_{2}^{6}}-\frac{C_{6,{\rm OO}}}{r_{\text{OO}}^{6}}\label{eq:Long-rangeOfPolyMLRWithC6's}\\
- & +\frac{C_{6,\text{CO(1)}}^{2}}{r_{1}^{12}}+\frac{C_{6,\text{CO(2)}}^{2}}{r_{2}^{12}}+\frac{C_{6,\text{OO}}^{2}}{r_{\text{OO}}^{12}}+\frac{2C_{6,\text{CO(1)}}C_{6,\text{CO(2)}}}{r_{1}^{6}r_{2}^{6}}+\frac{2C_{6,\text{CO(1)}}C_{6,\text{OO}}}{r_{1}^{6}r_{\text{OO}}^{6}}+\frac{2C_{6,\text{CO(2)}}C_{6,\text{OO}}}{r_{2}^{6}r_{\text{OO}}^{6}}.
+u\left(r_{1},r_{2}\right) & =\frac{C_{6,{\rm CO}}}{r_{1}^{6}}+\frac{C_{6,{\rm CO}}}{r_{2}^{6}}+\frac{C_{6,{\rm OO}}}{r_{\text{OO}}^{6}},\\
+V_{{\rm LR}}(r_{1},r_{2}) & =\mathfrak{D}_{e}-\frac{C_{6,\text{CO}}}{r_{1}^{6}}-\frac{C_{6,\text{CO}}}{r_{2}^{6}}-\frac{C_{6,{\rm OO}}}{r_{\text{OO}}^{6}}\label{eq:Long-rangeOfPolyMLRWithC6's}\\
+ & +\frac{C_{6,\text{CO}}^{2}}{r_{1}^{12}}+\frac{C_{6,\text{CO}}^{2}}{r_{2}^{12}}+\frac{C_{6,\text{OO}}^{2}}{r_{\text{OO}}^{12}}+\frac{2C_{6,\text{CO}}^{2}}{r_{1}^{6}r_{2}^{6}}+\frac{2C_{6,\text{CO}}C_{6,\text{OO}}}{r_{1}^{6}r_{\text{OO}}^{6}}+\frac{2C_{6,\text{CO}}C_{6,\text{OO}}}{r_{2}^{6}r_{\text{OO}}^{6}}.
 \end{align}
 
 \end_inset
@@ -457,7 +513,7 @@ Where
 
 .
  While it looks like the cross-terms (such as the one with 
-\begin_inset Formula $C_{6,\text{CO(1)}}C_{6,\text{CO(2)}}$
+\begin_inset Formula $C_{6,\text{CO}}C_{6,\text{CO}}$
 \end_inset
 
 ) might be problematic because it has the same 
@@ -523,42 +579,31 @@ Let's see what happens if
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-\lim_{r_{1}\rightarrow\infty}\beta\left(r_{1},r_{2}\right) & =\beta_{\infty}\left(\frac{1+y_{p,2}}{2}\right)+\left(\frac{1-y_{p,2}}{2}\right)\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}\\
-\lim_{r_{1}\rightarrow\infty}e^{-\beta(r_{1},r_{2})y_{p}(r_{1},r_{2})} & =e^{-\beta_{\infty}\left(\frac{1+y_{p,2}}{2}\right)^{2}-\frac{1-y_{p,2}^{2}}{4}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\\
- & =e^{-\beta_{\infty}\left(\frac{1+y_{p,2}}{2}\right)^{2}}e^{-\frac{1-y_{p,2}^{2}}{4}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\\
- & =\left(\frac{u\left(r_{e,1},r_{e,2}\right)}{2\mathfrak{D}_{e}}\right)^{\left(\frac{1+y_{p,2}}{2}\right)^{2}}e^{-\frac{1-y_{p,2}^{2}}{4}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\\
-\lim_{r_{1}\rightarrow\infty}V_{{\rm LR}}(r_{1},r_{2})= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}\left(\frac{u\left(r_{e,1},r_{e,2}\right)}{2\mathfrak{D}_{e}}\right)^{\left(\frac{1+y_{p,2}}{2}\right)^{2}}e^{-\frac{1-y_{p,2}^{2}}{4}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2}\\
-= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}\left(\frac{u\left(r_{e,1},r_{e,2}\right)}{2\mathfrak{D}_{e}}\right)^{x}e^{-\frac{1}{4}+\frac{y_{p,2}^{2}}{4}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2},\,0<x<1\\
-= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}\bar{x}\left(r_{2}\right)e^{\frac{y_{p,2}^{2}}{4}\sum_{i,j=0}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2},\,e^{-\nicefrac{1}{4}}<\bar{x}\left(r_{2}\right)<\frac{C_{6,{\rm CO(2)}}D_{6,{\rm CO(2)}}(r_{e})e^{-\nicefrac{1}{4}}}{2\mathfrak{D}_{e}r_{e,2}^{6}}
+\lim_{r_{1}\rightarrow\infty}\beta\left(r_{1},r_{2}\right) & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}e^{-\bar{\beta}_{ij}(r_{2})y_{p,2}(r_{2})}\right)^{2}
 \end{align}
 
 \end_inset
 
-We could define a 
-\begin_inset Formula $\beta_{\infty,r_{1}}$
+which turns out to be exactly the 1D-MLR for the diatomic CO in terms of
+ 
+\begin_inset Formula $r_{2}$
 \end_inset
 
- to remove the 
-\begin_inset Formula $\bar{x}(r_{2})$
+, except without a 
+\begin_inset Formula $\beta_{{\rm \infty}}$
 \end_inset
 
- so that this last equation looks almost identical to the 1D-MLR, however
- this does not yet seem to be necessary.
-\end_layout
-
-\begin_layout Section
-2D harmonic oscillator
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align}
-V\left(r_{1},r_{2}\right)= & \frac{1}{2}\left(k_{1}\left(r_{1}-r_{1,e}\right)^{2}+k_{2}\left(r_{2}-r_{2,e}\right)^{2}\right)
-\end{align}
-
+.
+ We could define a 
+\begin_inset Formula $\beta_{\infty,r_{2}}$
 \end_inset
 
+, however this does not yet seem to be necessary because if 
+\begin_inset Formula $r_{2}\rightarrow\infty$
+\end_inset
 
+, we have already shown that this equation collapses to the global long-range
+ function.
 \end_layout
 
 \begin_layout Section
@@ -670,7 +715,8 @@ P\left[\left(r_{1}-r_{{\rm ref}}\right)^{i}\left(r_{2}-r_{{\rm ref}}\right)^{j}\
 \begin{align}
 \lim_{r_{1}\rightarrow\infty}V\left(r_{1},r_{2},\theta\right) & =\sum{}_{m}\left(D_{e,m}\left(1-e^{-\beta\left(r_{2}-r_{{\rm ref}}\right)}\right)^{2m}\right)\\
 \lim_{r_{2}\rightarrow\infty}V\left(r_{1},r_{2},\theta\right) & =\sum{}_{m}\left(D_{e,m}\left(1-e^{-\beta\left(r_{1}-r_{{\rm ref}}\right)}\right)^{2m}\right)\\
-\lim_{\theta\rightarrow180^{\circ}}V\left(r_{1},r_{2},\theta\right) & =e^{-\sum_{i,m}\left(d_{m}\left(r_{i}-r_{{\rm ref}}\right)^{2m}\right)}\sum_{n}C_{ijk}^{n}P\left[\left(1-e^{-\beta\left(r_{1}-r_{{\rm ref}}\right)}\right)^{i}\left(1-e^{-\beta\left(r_{2}-r_{{\rm ref}}\right)}\right)^{j}\right]+\sum{}_{m}\left(D_{e,m}\sum_{i}\left(1-e^{-\beta\left(r_{i}-r_{{\rm ref}}\right)}\right)^{2m}\right)\\
+\lim_{\theta\rightarrow180^{\circ}}V\left(r_{1},r_{2},\theta\right) & =e^{-\sum_{i,m}\left(d_{m}\left(r_{i}-r_{{\rm ref}}\right)^{2m}\right)}\sum_{n}C_{ijk}^{n}P\left[\left(1-e^{-\beta\left(r_{1}-r_{{\rm ref}}\right)}\right)^{i}\left(1-e^{-\beta\left(r_{2}-r_{{\rm ref}}\right)}\right)^{j}\right]\\
+ & +\sum{}_{m}\left(D_{e,m}\sum_{i}\left(1-e^{-\beta\left(r_{i}-r_{{\rm ref}}\right)}\right)^{2m}\right)\\
  & =V^{a}(r_{1})+V^{a}(r_{2})+V^{c}(r_{1},r_{2})\\
 \lim_{r_{1},r_{2}\rightarrow\infty}V\left(r_{1},r_{2},\theta\right) & =0
 \end{align}
@@ -678,13 +724,14 @@ P\left[\left(r_{1}-r_{{\rm ref}}\right)^{i}\left(r_{2}-r_{{\rm ref}}\right)^{j}\
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status open
 
 \begin_layout Subsection
 New Model (inspired by Schwenke)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \begin{align}
 V_{{\rm short}}\left(r_{1},r_{2},\pi\right) & =\sum_{k}C_{k}P\left[\left(1-e^{-\beta_{p,q,k}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e,{\rm linear}}}(r_{1})}\right)^{2}\left(1-e^{-\beta_{p,q,k}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e,{\rm linear}}}(r_{2})}\right)^{2}\right]\\
@@ -696,17 +743,45 @@ V_{{\rm short}}\left(r_{e},r_{2},\theta\right) & =0\,\text{[PROBLEM!]}
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
-New Model (perfect?)
+New Model
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ (perfect?)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size small
+\begin_inset Formula 
+\begin{equation}
+V\left(r_{1},r_{2},\theta\right)=V_{{\rm long,_{CO}}}\left(r_{1}\right)+V_{{\rm long,_{CO}}}\left(r_{2}\right)+V_{{\rm long,_{OO}}}\left(r_{{\rm HH}}\right)+V_{{\rm long,nonadditive,LR}}\left(r_{1},r_{2},\theta\right)+V_{{\rm short}}\left(r_{1},r_{2},\theta\right)
+\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2},\theta\right) & =V_{{\rm long_{BeH}}}\left(r_{1}\right)+V_{{\rm long_{BeH}}}\left(r_{2}\right)+V_{{\rm long_{H_{2}}}}\left(r_{{\rm HH}}\right)+V_{{\rm long,nonadditive,LR}}\left(r_{1},r_{2},\theta\right)+V_{{\rm short}}\left(r_{1},r_{2},\theta\right)\\
-V_{{\rm long_{BeH}}}\left(r\right) & =\text{MLR}_{\text{BeH}}\\
-V_{{\rm long_{H_{2}}}}\left(r\right) & =\text{MLR}_{{\rm H_{2}}}\\
-V_{{\rm short}}\left(r_{1},r_{2},\theta\right) & =e^{-\sum_{i,m}\left(d_{m}\left(r_{i}-r_{{\rm ref}}\right)^{2m}\right)}\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e}(\theta)}(r_{1})}e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right)e^{-\sum_{m}\bar{d}_{m}\left(1+\cos\theta\right)^{2m}}{\rm cos}^{k}\left(\pi-\theta\right)-e^{-(r_{1}+r_{2}-2r_{e})}\mathfrak{D}_{e}\\
+V_{{\rm long_{CO}}}\left(r\right) & =\text{MLR}_{\text{CO}}\\
+V_{{\rm long_{OO}}}\left(r\right) & =\text{MLR}_{{\rm OO}}\\
+V_{{\rm short}}\left(r_{1},r_{2},\theta\right) & =e^{-\sum_{i,m}\left(d_{m}\left(r_{i}-r_{{\rm ref}}\right)^{2m}\right)}\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e}(\theta)}(r_{1})}e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right)\\
+ & \times e^{-\sum_{m}\bar{d}_{m}\left(1+\cos\theta\right)^{2m}}{\rm cos}^{k}\left(\pi-\theta\right)-e^{-(r_{1}+r_{2}-2r_{e})}\mathfrak{D}_{e}\\
 \lim_{r_{1}\rightarrow\infty}V_{{\rm short}}\left(r_{1},r_{2},\theta\right) & =0\\
 \lim_{r_{2}\rightarrow\infty}V_{{\rm short}}\left(r_{1},r_{2},\theta\right) & =0\\
 \lim_{r_{1},r_{2}\rightarrow\infty}V_{{\rm short}}\left(r_{1},r_{2},\theta\right) & =0\\
@@ -714,6 +789,64 @@ V_{{\rm short}}\left(r_{1},r_{2},\pi\right) & =e^{-\sum_{i,m}\left(d_{m}\left(r_
 V_{{\rm short}}\left(r_{e},r_{2},\pi\right) & =e^{-\sum_{i,m}\left(d_{m}\left(r_{i}-r_{{\rm ref}}\right)^{2m}\right)}\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{2})y_{p}^{r_{e}(\theta)}(r_{2})}\right)-e^{-(r_{2}-r_{e})}\mathfrak{D}_{e}\\
 V_{{\rm short}}\left(r_{1},r_{e},\pi\right) & =e^{-\sum_{i,m}\left(d_{m}\left(r_{i}-r_{{\rm ref}}\right)^{2m}\right)}\left(1-e^{-\beta_{p,q}^{r_{{\rm ref}}}(r_{1})y_{p}^{r_{e}(\theta)}(r_{1})}\right)-e^{-(r_{1}-r_{e})}\mathfrak{D}_{e}\\
 V_{{\rm short}}\left(r_{e},r_{e},\pi\right) & =-\mathfrak{D}_{e}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Appendix: Poly-MLR when 
+\begin_inset Formula $r_{1}\rightarrow\infty$
+\end_inset
+
+ but 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ does not
+\end_layout
+
+\begin_layout Standard
+Let's see what happens if 
+\begin_inset Formula $r_{1}\rightarrow\infty$
+\end_inset
+
+ but 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ does not:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\lim_{r_{1}\rightarrow\infty}\beta\left(r_{1},r_{2}\right) & =\beta_{\infty}\left(\frac{1+y_{p,2}}{2}\right)+\left(\frac{1-y_{p,2}}{2}\right)\sum_{i,j}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}\\
+\lim_{r_{1}\rightarrow\infty}e^{-\beta(r_{1},r_{2})y_{p}(r_{1},r_{2})} & =e^{-\beta_{\infty}\left(\frac{1+y_{p,2}}{2}\right)^{2}-\frac{1-y_{p,2}^{2}}{4}\sum_{i,j}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\\
+ & =e^{-\beta_{\infty}\left(\frac{1+y_{p,2}}{2}\right)^{2}}e^{-\frac{1-y_{p,2}^{2}}{4}\sum_{i,j}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\\
+ & =\left(\frac{u\left(r_{e,1},r_{e,2}\right)}{2\mathfrak{D}_{e}}\right)^{\left(\frac{1+y_{p,2}}{2}\right)^{2}}e^{-\frac{1-y_{p,2}^{2}}{4}\sum_{i,j}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\\
+\lim_{r_{1}\rightarrow\infty}V_{{\rm LR}}(r_{1},r_{2})= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}\left(\frac{u\left(r_{e,1},r_{e,2}\right)}{2\mathfrak{D}_{e}}\right)^{\left(\frac{1+y_{p,2}}{2}\right)^{2}}e^{-\frac{1-y_{p,2}^{2}}{4}\sum_{i,j}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2}\\
+= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}\left(\frac{u\left(r_{e,1},r_{e,2}\right)}{2\mathfrak{D}_{e}}\right)^{x}e^{-\frac{1}{4}+\frac{y_{p,2}^{2}}{4}\sum_{i,j}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2},\,0<x<1\\
+= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}\bar{x}e^{\frac{y_{p,2}^{2}}{4}\sum_{i,j}^{N_{\beta}}\beta_{i,j}\left(y_{p,2}\right)^{j}}\right)^{2},\,e^{-\nicefrac{1}{4}}<\bar{x}<\frac{u\left(r_{e,1},r_{e,2}\right)e^{-\nicefrac{1}{4}}}{2\mathfrak{D}_{e}}\\
+= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}e^{-\sum_{i,j}^{N_{\beta}}\bar{\beta}_{ij}\left(y_{p,2}\right)^{j+2}}\right)^{2}\\
+= & \mathfrak{D}_{e}\left(1-\frac{u\left(r_{2}\right)}{u\left(r_{e,1},r_{e,2}\right)}e^{-\bar{\beta}_{ij}(r_{2})y_{p,2}(r_{2})}\right)^{2},
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+2D harmonic oscillator
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+V\left(r_{1},r_{2}\right)= & \frac{1}{2}\left(k_{1}\left(r_{1}-r_{1,e}\right)^{2}+k_{2}\left(r_{2}-r_{2,e}\right)^{2}\right)
 \end{align}
 
 \end_inset

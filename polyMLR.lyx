@@ -221,8 +221,7 @@ u\left(r_{e,1},r_{e,2}\right) & =u\left(r_{e,1}\right)u\left(r_{e,2}\right)\,\te
  & =\mathfrak{D}_{e}\left(1-\frac{u\left(r_{1},r_{2}\right)}{\sqrt{2\mathfrak{D}_{e}}}f\left(r_{2}\right)\right)^{2}\\
  & =\mathfrak{D}_{e}\left(1-\frac{\sqrt{2}u\left(r_{1},r_{2}\right)}{\sqrt{\mathfrak{D}_{e}}}f\left(r_{2}\right)+\frac{u^{2}\left(r_{1},r_{2}\right)}{2\mathfrak{D}_{e}}f^{2}\left(r_{2}\right)\right)\\
  & =\mathfrak{D}_{e}-u\left(r_{1},r_{2}\right)\sqrt{2\mathfrak{D}_{e}}f\left(r_{2}\right)+\frac{u^{2}\left(r_{1},r_{2}\right)f^{2}\left(r_{2}\right)}{2}\\
- & =\mathfrak{D}_{e}-\frac{C_{6,1}\left(r_{2}\right)\frac{\sqrt{2\mathfrak{D}_{e}}e^{-\beta(r_{2})(1+y_{p,2})/2}}{u\left(r_{e,2}\right)}}{r_{1}^{6}}-\frac{C_{8,1}\left(r_{2}\right)\frac{\sqrt{2\mathfrak{D}_{e}}e^{-\beta(r_{2})(1+y_{p,2})/2}}{u\left(r_{e,2}\right)}}{r_{1}^{8}}\label{eq:limitOfR1forFirstModel}\\
- & +\frac{C_{6,1}\left(r_{2}\right)^{2}\frac{e^{-2\beta(r_{2})(1+y_{p,2})/2}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{12}}+\frac{C_{6,1}\left(r_{2}\right)C_{8,1}\left(r_{2}\right)\frac{e^{-2\beta(r_{2})(1+y_{p,2})/2}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{14}}+\frac{C_{8,1}\left(r_{2}\right)^{2}\frac{e^{-2\beta(r_{2})(1+y_{p,2})/2}}{2u^{2}\left(r_{e,2}\right)}}{r_{1}^{16}}
+ & =\mathfrak{D}_{e}-\frac{r_{e,2}^{6}}{r_{2}^{6}}\sqrt{2\mathfrak{D}_{e}}e^{-\beta(r_{2})(1+y_{p,2})/2}-\frac{r_{e,2}^{8}}{r_{2}^{8}}\sqrt{2\mathfrak{D}_{e}}e^{-\beta(r_{2})(1+y_{p,2})/2}\label{eq:limitOfR1forFirstModel}
 \end{align}
 
 \end_inset
@@ -256,18 +255,6 @@ reference "eq:final1"
 
  looks almost exactly the same as in the 1D MLR case, which is promising,
  but:
-\end_layout
-
-\begin_layout Enumerate
-Eq.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:limitOfR1forFirstModel"
-
-\end_inset
-
- might not have the desired form, 
 \end_layout
 
 \begin_layout Enumerate
