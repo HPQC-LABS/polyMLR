@@ -640,7 +640,7 @@ Molecular Potential Energy Functions (1984)
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-V\left(r_{1},r_{2},\theta\right) & =V^{a}\left(r_{1}\right)+V^{a}\left(r_{2}\right)+V^{b}\left(r_{{\rm HH}}\right)+V^{c}\left(r_{1},r_{2},\theta\right)\\
+V\left(r_{1},r_{2},\theta\right) & =V^{a}\left(r_{1}\right)+V^{a}\left(r_{2}\right)+V^{b}\left(r_{{\rm 12}}\right)+V^{c}\left(r_{1},r_{2},\theta\right)\\
 V^{a}\left(r\right) & =D\left(1-e^{-a\left(r-r_{{\rm ref}}\right)}\right)^{2}\\
 V^{b}\left(r\right) & =Ae^{-br}\\
 V^{c}\left(r\right) & =e^{-\beta\left(\left(r_{1}-r_{e}\right)^{2}+\left(r_{2}-r_{e}\right)^{2}\right)}\sum_{ijk}c_{ijk}\left(\frac{r_{1}-r_{e}}{r_{e}}\right)^{i}\left(\frac{r_{2}-r_{e}}{r_{e}}\right)^{j}\left(\cos\theta-\cos\theta_{e}\right)^{k}
